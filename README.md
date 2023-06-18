@@ -45,7 +45,8 @@ Solution Center uygulaması, üniversite öğrencilerini hedef alarak onlar aras
 # Sprint 1
 - Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 - Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in 100 ile başlaması gerektiğine karar verildi.
-- Daily Scrum: Daily Scrum toplantılarının Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır:
+- Daily Scrum: Daily Scrum toplantılarının Google Meet ve What
+sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [sprint.docx](https://github.com/Malsaeed276/Soltion-Center/files/11782677/sprint.docx)
 - Sprint board update: Sprint board screenshotları:
 - 
 <img width="1476" alt="image" src="https://github.com/Malsaeed276/Soltion-Center/assets/49440100/e124e201-6be2-4509-8e38-5cbd0e247519">
