@@ -48,7 +48,8 @@ Solution Center uygulaması, üniversite öğrencilerini hedef alarak onlar aras
 - Daily Scrum: Daily Scrum toplantılarının Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır:
 - Sprint board update: Sprint board screenshotları:
 - 
-<img width="1465" alt="image" src="https://github.com/Malsaeed276/Soltion-Center/assets/49440100/556a34ae-2fb6-4c56-86fa-2732d60b2cb6">
+<img width="1476" alt="image" src="https://github.com/Malsaeed276/Soltion-Center/assets/49440100/e124e201-6be2-4509-8e38-5cbd0e247519">
+
 
 - Sprint Review: 
    * Uygulamanın hedef kitlesinin üniversite öğrencileri olduğuna karar verilmiş ve üniversite öğrencilerinin öncelikli ihtiyaçlarına yönelik anket çalışması yapılmıştır. 
