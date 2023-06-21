@@ -51,9 +51,13 @@ Solution Center uygulaması, üniversite öğrencilerini hedef alarak onlar aras
 - Daily Scrum: Daily Scrum toplantılarının Google Meet ve What
 sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [sprint.docx](https://github.com/Malsaeed276/Soltion-Center/files/11782677/sprint.docx)
 - Sprint board update: Sprint board screenshotları:
-- 
+
 <img width="1476" alt="image" src="https://github.com/Malsaeed276/Soltion-Center/assets/49440100/e124e201-6be2-4509-8e38-5cbd0e247519">
 
+- Ürün Durumu :
+![WhatsApp Image 2023-06-21 at 16 41 50](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/c2b987ae-827a-4107-a637-34925909e840)
+![WhatsApp Image 2023-06-21 at 16 41 38](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/06bd2f84-5ab2-4d63-bea3-8b80a239e482)
+![WhatsApp Image 2023-06-21 at 16 42 05](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/e8298b03-bfbf-4475-868d-6e525adbe8e0)
 
 - Sprint Review: 
    * Uygulamanın hedef kitlesinin üniversite öğrencileri olduğuna karar verilmiş ve üniversite öğrencilerinin öncelikli ihtiyaçlarına yönelik anket çalışması yapılmıştır. 
