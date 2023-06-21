@@ -1,8 +1,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:soltion_center/localization/Localization.dart';
+import 'package:soltion_center/localization/en_lang.dart';
+import 'package:soltion_center/localization/tr_lang.dart';
+import 'package:soltion_center/view/widgets/dialog/language_dialog.dart';
 
 enum LangDirection { right, left }
 
@@ -10,7 +13,8 @@ class LocalizationController with ChangeNotifier {
   final languageBox = Hive.box('language');
 
   final Map<String, Localization> languages = {
-
+    'en': ENLocalization(),
+    'tr': TRLocalization(),
   };
 
   LangDirection _langDirection = LangDirection.left;
@@ -18,6 +22,7 @@ class LocalizationController with ChangeNotifier {
   LangDirection getLangDirection() {
     return _langDirection;
   }
+
 
   void _setLangDirection() {
     if (_langDirection == getLanguage().langDirection) {
@@ -47,11 +52,11 @@ class LocalizationController with ChangeNotifier {
     return languages[getAppLang]!;
   }
 
-  // void getLanguageDialog(BuildContext context) {
-  //   showDialog(
-  //     barrierDismissible: true,
-  //     context: context,
-  //     builder: (context) => const LanguageDialog(),
-  //   );
-  // }
+  void getLanguageDialog(BuildContext context) {
+    showDialog(
+      barrierDismissible: true,
+      context: context,
+      builder: (context) => const LanguageDialog(),
+    );
+  }
 }
