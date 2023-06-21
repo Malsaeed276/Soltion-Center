@@ -45,7 +45,7 @@ Solution Center uygulaması, üniversite öğrencilerini hedef alarak onlar aras
 - Üniversitede çalışan akademik personeller
 
 # Sprint 1
-- Sprint Notları: User story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.  
+- Sprint Notları: Bu Sprint için hedef olarak koyduğumuz anket çalışmasını backlog kısmında herkesin seçtiği hedef kitle ve anket çalışmasının konusu yer alıyor.
 - Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 - Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in 100 ile başlaması gerektiğine karar verildi.
 - Daily Scrum: Daily Scrum toplantılarının Google Meet ve What
