@@ -2,6 +2,7 @@ import 'package:soltion_center/controllers/localization_controller.dart';
 
 abstract class Localization {
   late LangDirection langDirection;
+
   // App name
   late String? appTitle;
   late String? appDescription;
@@ -20,4 +21,26 @@ abstract class Localization {
   late String? registerText;
   late String? loginText;
   late String? userNotFound;
+
+  //buttons
+  late String? accept;
+  late String? theme;
+  late String? system;
+  late String? light;
+  late String? dark;
+  late String? done;
+
+  //lang
+  late String? language;
+  late String? languageCode;
+
+
+  // App Language Dialog
+
+  late String? languageDialogDescription;
+  late String? languageDialogDoneButtonText;
+
+  // Internet Dialog
+  late String? largeWebViewError;
+  late String? noInternetWarningDialogText;
 }
