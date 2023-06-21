@@ -82,6 +82,7 @@ class LanguageDialog extends StatelessWidget {
                         : () {
                             lang.setAppLang =
                                 lang.languages.keys.elementAt(index);
+                            Navigator.pop(context);
                           },
                   ),
                 ),

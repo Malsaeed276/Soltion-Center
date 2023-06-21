@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/view/login/sign_in.dart';
+import 'package:soltion_center/view/login/sign_up.dart';
 
+import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
 import 'over_screens/over_screens.dart';
 import 'units/theme.dart';
@@ -13,6 +16,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final connection = context.read<ConnectionController>();
+    connection.getConnectivity.onConnectivityChanged
+        .listen(connection.checkConnectivityState);
     return MaterialApp(
       title:  Provider.of<LocalizationController>(context, listen: false).getLanguage().appTitle!,
       themeMode: ThemeMode.system,
@@ -31,6 +37,12 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intro': (context) => const ApplyForEachPage(
           child: IntroPage(),
+        ),
+        '/SignIn': (context) => const ApplyForEachPage(
+          child: SignIn(),
+        ),
+        '/SignUp': (context) => const ApplyForEachPage(
+          child: SignUp(),
         ),
       },
 

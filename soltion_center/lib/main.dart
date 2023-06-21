@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'app.dart';
+import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
 import 'firebase_options.dart';
 
@@ -37,7 +38,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => LocalizationController()),
-
+        ChangeNotifierProvider(create: (context) => ConnectionController()),
       ],
       child: const MyApp(),
     ),
