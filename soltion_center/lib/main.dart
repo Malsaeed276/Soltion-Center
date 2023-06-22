@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/user_controller.dart';
 
 import 'app.dart';
 import 'controllers/connection_controller.dart';
@@ -39,6 +40,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (context) => LocalizationController()),
         ChangeNotifierProvider(create: (context) => ConnectionController()),
+        ChangeNotifierProvider(create: (context) => UserController()),
       ],
       child: const MyApp(),
     ),

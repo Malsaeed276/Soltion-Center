@@ -55,7 +55,7 @@ class IntroPage extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/SignUp');
+                    Navigator.pushReplacementNamed(context, '/Profile');
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(

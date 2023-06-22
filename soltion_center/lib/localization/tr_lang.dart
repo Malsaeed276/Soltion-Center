@@ -114,4 +114,7 @@ class TRLocalization implements Localization{
   @override
   String? logoutDialogLogoutButtonText = 'Çıkış Yap';
 
+  @override
+  String? profile = 'Profil';
+
 }

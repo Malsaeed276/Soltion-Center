@@ -113,4 +113,7 @@ class ENLocalization implements Localization {
 
   @override
   String? logoutDialogLogoutButtonText = 'Logout';
+
+  @override
+  String? profile = 'Profile';
 }

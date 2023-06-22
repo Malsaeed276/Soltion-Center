@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/view/login/sign_in.dart';
 import 'package:soltion_center/view/login/sign_up.dart';
+import 'package:soltion_center/view/profile/profile.dart';
 
 import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
@@ -43,6 +44,9 @@ class MyApp extends StatelessWidget {
         ),
         '/SignUp': (context) => const ApplyForEachPage(
           child: SignUp(),
+        ),
+        '/Profile': (context) => const ApplyForEachPage(
+          child: Profile(),
         ),
       },
 
