@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:soltion_center/utils/images/logo.dart';
+import 'package:soltion_center/units/logo.dart';
 
 import '../../controllers/localization_controller.dart';
 

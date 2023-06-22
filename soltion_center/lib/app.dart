@@ -7,7 +7,6 @@ import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
 import 'over_screens/over_screens.dart';
 import 'units/theme.dart';
-import 'utils/images/logo.dart';
 import 'view/login/intro.dart';
 
 class MyApp extends StatelessWidget {
