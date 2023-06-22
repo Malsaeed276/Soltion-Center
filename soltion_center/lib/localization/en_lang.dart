@@ -83,4 +83,34 @@ class ENLocalization implements Localization {
   String? largeWebViewError =
       "This device is not supported. Please play the game only on your mobile browser.";
 
+  // App Messages
+  @override
+  String? alreadyExistMessage = 'The account already exists';
+
+  @override
+  String? loginMessage = 'You have successfully entered';
+
+  @override
+  String? registerMessage = 'registration successful';
+
+  @override
+  String? wrongPasswordMessage =
+      'You have entered the wrong information, please check again';
+
+  @override
+  String? signOutMessage = 'Signed out successfully';
+
+  @override
+  String? signOutErrorMessage = 'Error in signing out';
+
+  // Logout Dialog
+  @override
+  String? logoutDialogDescriptionText =
+      'Are you sure that you want to log out?';
+
+  @override
+  String? logoutDialogCancelButtonText = 'Cancel';
+
+  @override
+  String? logoutDialogLogoutButtonText = 'Logout';
 }

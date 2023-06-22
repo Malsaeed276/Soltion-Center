@@ -43,4 +43,17 @@ abstract class Localization {
   // Internet Dialog
   late String? largeWebViewError;
   late String? noInternetWarningDialogText;
+
+  // App Messages
+  late String? loginMessage;
+  late String? registerMessage;
+  late String? alreadyExistMessage;
+  late String? wrongPasswordMessage;
+  late String? signOutMessage;
+  late String? signOutErrorMessage;
+
+  // Logout Dialog
+  late String? logoutDialogDescriptionText;
+  late String? logoutDialogCancelButtonText;
+  late String? logoutDialogLogoutButtonText;
 }

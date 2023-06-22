@@ -83,4 +83,35 @@ class TRLocalization implements Localization{
   String? largeWebViewError =
       "Bu cihaz desteklenmiyor. Lütfen bu oyunu sadece mobil tarayıcıda oynayın.";
 
+  // App Messages
+  @override
+  String? alreadyExistMessage = 'Hesap zaten mevcut';
+
+  @override
+  String? loginMessage = 'Giriş başarılı';
+
+  @override
+  String? registerMessage = 'Kayıt başarılı';
+
+  @override
+  String? wrongPasswordMessage =
+      'Yanlış bilgi girdiniz, lütfen tekrar kontrol ediniz';
+
+  @override
+  String? signOutMessage = 'Hesaptan çıkış başarılı';
+
+  @override
+  String? signOutErrorMessage = 'Oturum kapatma hatası';
+
+  // Logout Dialog
+  @override
+  String? logoutDialogDescriptionText =
+      'Oturumu kapatmak istediğinizden emin misiniz?';
+
+  @override
+  String? logoutDialogCancelButtonText = 'İptal';
+
+  @override
+  String? logoutDialogLogoutButtonText = 'Çıkış Yap';
+
 }
