@@ -15,28 +15,10 @@ class SignUp extends StatelessWidget {
           child: Column(
             children: <Widget>[
               TextFormField(
-                decoration: InputDecoration(labelText: 'İsim'),
+                decoration: InputDecoration(labelText: 'İsim Soyisim'),
                 validator: (value) {
                   if (value.isEmpty) {
-                    return 'Lütfen bir isim girin';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Soyisim'),
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Lütfen bir soyisim girin';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Kullanıcı Adı'),
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Lütfen bir kullanıcı adı girin';
+                    return 'Lütfen isim soyisim girin';
                   }
                   return null;
                 },
@@ -85,3 +67,4 @@ class SignUp extends StatelessWidget {
     );
   }
 }
+
