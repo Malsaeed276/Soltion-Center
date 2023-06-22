@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         .listen(connection.checkConnectivityState);
     return MaterialApp(
       title:  Provider.of<LocalizationController>(context, listen: false).getLanguage().appTitle!,
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: ThemeData(
         useMaterial3: true,

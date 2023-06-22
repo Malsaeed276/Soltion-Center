@@ -42,10 +42,14 @@ class IntroPage extends StatelessWidget {
                 lang.appTitle!,
                 style: theme.textTheme.headlineMedium,
               ),
-              Text(
-                lang.appDescription!,
-                style: theme.textTheme.bodyMedium,
+              const SizedBox(height: 24,),
+              Expanded(
+                child: Text(
+                  lang.appDescription!,
+                  style: theme.textTheme.bodyMedium,
+                ),
               ),
+              const SizedBox(height: 24,),
               SizedBox(
                 width: double.infinity,
                 height: 50,
