@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:solution_center/units/logo.dart';
+import '../../controllers/localization_controller.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -6,14 +9,33 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
+    final lang = Provider.of<LocalizationController>(context, listen: true).getLanguage();
+    final theme = Theme.of(context);
 
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Provider.of<LocalizationController>(context, listen: false).getLanguageDialog(context);
+            },
+            icon: Icon(
+              Icons.language_outlined,
+              color: theme.primaryColor,
+            ),
+          )
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: <Widget>[
+              CustomPaint(
+                size: Size(200, (200 * 1).toDouble()),
+                painter: AppLogo(),
+              ),
               TextFormField(
                 decoration: InputDecoration(labelText: 'İsim Soyisim'),
                 validator: (value) {
@@ -57,7 +79,12 @@ class SignUp extends StatelessWidget {
                           .showSnackBar(SnackBar(content: Text('İşlem yapılıyor')));
                     }
                   },
-                  child: Text('Kayıt Ol'),
+                  child: Text(
+                    lang.accept!,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: theme.colorScheme.onPrimary,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -67,4 +94,5 @@ class SignUp extends StatelessWidget {
     );
   }
 }
+
 
