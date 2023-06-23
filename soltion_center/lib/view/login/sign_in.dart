@@ -20,17 +20,32 @@ class SignIn extends StatelessWidget {
                   painter: AppLogo(),
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                child:
+                Text("Log in", style: TextStyle(fontSize: 30),)
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 child: TextFormField(decoration: InputDecoration(labelText: 'e-mail', hintText: 'e-mailinizi giriniz'),
                 controller: emailController,
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 child: TextFormField(
                   decoration: InputDecoration(labelText: 'şifre', hintText: 'şifrenizi giriniz'),
                   controller: passwordController),
               ),
-
+              SizedBox(
+                height: 20,
+              ),
               Container(
               width: double.infinity,
               child: RawMaterialButton(
