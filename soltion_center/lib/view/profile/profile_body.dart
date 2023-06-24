@@ -15,7 +15,7 @@ class ProfileBody extends StatelessWidget {
         )
       ),
       child: ListView.builder(
-          itemCount: 4,
+          itemCount: 6,
           itemBuilder: (context,index){
         return Padding(
           padding: const EdgeInsets.all(12.0),
@@ -31,7 +31,9 @@ class ProfileBody extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12,),
-                  Text('Data',style: theme.textTheme.labelLarge,)
+                  Text('Data',style: theme.textTheme.labelLarge!.copyWith(
+                    color: theme.colorScheme.onSecondary,
+                  ),)
                 ],
               ),),
         );
