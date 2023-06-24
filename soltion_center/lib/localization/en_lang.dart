@@ -11,7 +11,7 @@ class ENLocalization implements Localization {
   String? appTitle = 'Solution Center';
 
   @override
-  String? email;
+  String? email = 'Email';
 
   @override
   LangDirection langDirection = LangDirection.left;
@@ -25,22 +25,22 @@ class ENLocalization implements Localization {
   String? logOut;
 
   @override
-  String? login;
+  String? login = 'Log In';
 
   @override
   String? loginText;
 
   @override
-  String? password;
+  String? password = 'Password';
 
   @override
-  String? register;
+  String? register = 'Register';
 
   @override
   String? registerText;
 
   @override
-  String? userName;
+  String? userName = 'User Name';
 
   @override
   String? userNotFound;
@@ -116,4 +116,16 @@ class ENLocalization implements Localization {
 
   @override
   String? profile = 'Profile';
+
+  @override
+  String? enterYourEmail = 'Enter Your Email';
+
+  @override
+  String? enterYourNameAndSurname = 'Enter Your Name & Surname';
+
+  @override
+  String? enterYourPassword = 'Enter Your Password';
+
+  @override
+  String? nameSurname = 'Name & Surname';
 }

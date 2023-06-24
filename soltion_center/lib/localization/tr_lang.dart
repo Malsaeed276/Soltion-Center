@@ -9,7 +9,7 @@ class TRLocalization implements Localization{
   String? appTitle = 'Çözüm Merkezi';
 
   @override
-  String? email;
+  String? email = 'E-posta';
 
   @override
   LangDirection langDirection = LangDirection.left;
@@ -33,7 +33,7 @@ class TRLocalization implements Localization{
   String? password = 'Şifre';
 
   @override
-  String? register = 'Kaydol';
+  String? register = 'Kayd ol';
 
   @override
   String? registerText = 'Henüz bir hesabınız yok mu?';
@@ -116,5 +116,18 @@ class TRLocalization implements Localization{
 
   @override
   String? profile = 'Profil';
+
+  @override
+  String? enterYourEmail = 'E-postanızı giriniz';
+
+  @override
+  String? enterYourNameAndSurname = 'Adınızı ve soyadınızı giriniz';
+
+  @override
+  String? enterYourPassword = 'şifrenizi giriniz';
+
+  @override
+  String? nameSurname = 'Ad Soyad';
+
 
 }

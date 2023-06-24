@@ -57,4 +57,12 @@ abstract class Localization {
   late String? logoutDialogDescriptionText;
   late String? logoutDialogCancelButtonText;
   late String? logoutDialogLogoutButtonText;
+
+
+  //Auth
+  late String? nameSurname;
+  late String? enterYourPassword;
+  late String? enterYourEmail;
+  late String? enterYourNameAndSurname;
+
 }

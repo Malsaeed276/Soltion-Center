@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:solution_center/units/logo.dart';
+import 'package:soltion_center/units/logo.dart';
 import '../../controllers/localization_controller.dart';
 
 class SignUp extends StatelessWidget {
@@ -14,6 +14,7 @@ class SignUp extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         actions: [
           IconButton(
             onPressed: () {
@@ -21,7 +22,7 @@ class SignUp extends StatelessWidget {
             },
             icon: Icon(
               Icons.language_outlined,
-              color: theme.primaryColor,
+              color: theme.colorScheme.primary,
             ),
           )
         ],
@@ -36,22 +37,23 @@ class SignUp extends StatelessWidget {
                 size: Size(200, (200 * 1).toDouble()),
                 painter: AppLogo(),
               ),
+              Text(lang.register!, style: TextStyle(fontSize: 30),),
               TextFormField(
-                decoration: InputDecoration(labelText: 'İsim Soyisim'),
+                decoration: InputDecoration(labelText: lang.nameSurname),
                 validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Lütfen isim soyisim girin';
+                  if (value!.isEmpty) {
+                    return lang.enterYourNameAndSurname;
                   }
                   return null;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'E-posta'),
+                decoration: InputDecoration(labelText: lang.email),
                 validator: (value) {
-                  Pattern pattern =
+                  String pattern =
                       r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(edu)$';
                   RegExp regex = RegExp(pattern);
-                  if (!regex.hasMatch(value))
+                  if (!regex.hasMatch(value!))
                     return 'Lütfen geçerli bir okul e-postası girin';
                   else
                     return null;
@@ -59,24 +61,30 @@ class SignUp extends StatelessWidget {
               ),
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(labelText: 'Parola'),
+                decoration: InputDecoration(labelText: lang.password),
                 validator: (value) {
-                  Pattern pattern =
+                  String pattern =
                       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
                   RegExp regex = RegExp(pattern);
-                  if (!regex.hasMatch(value))
+                  if (!regex.hasMatch(value!))
                     return 'Şifre en az 8 karakter, 1 sayı, 1 küçük ve 1 büyük harf içermeli';
                   else
                     return null;
                 },
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: ElevatedButton(
+              const SizedBox(
+                height: 24,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: RawMaterialButton(
+                  fillColor: theme.colorScheme.surfaceTint ,
+                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0)),
                   onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      Scaffold.of(context)
-                          .showSnackBar(SnackBar(content: Text('İşlem yapılıyor')));
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('İşlem yapılıyor')));
                     }
                   },
                   child: Text(

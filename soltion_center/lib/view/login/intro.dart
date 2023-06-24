@@ -13,8 +13,10 @@ class IntroPage extends StatelessWidget {
         Provider.of<LocalizationController>(context, listen: true)
             .getLanguage();
     final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         actions: [
           IconButton(
             onPressed: () {
@@ -22,7 +24,7 @@ class IntroPage extends StatelessWidget {
             },
             icon: Icon(
               Icons.language_outlined,
-              color: theme.primaryColor,
+              color: theme.colorScheme.primary,
             ),
           )
         ],
