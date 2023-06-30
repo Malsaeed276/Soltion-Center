@@ -27,7 +27,6 @@ class CategoryService {
   }
 
   //get category by id
-
   Future<CategoryModel?> getCategory(String id) async {
     try {
       var data = await db.collection("categories").doc(id).get();
@@ -49,6 +48,10 @@ class CategoryService {
         .set(category.toJson());
   }
 
+  //TODO add categories to db
+  // add categories to db
+  // Input -> (List[CategoryModel] categories)
+
 // delete category 
   Future<void> deleteCategory(String categoryId)async {    
       await db
@@ -56,6 +59,5 @@ class CategoryService {
         .doc(categoryId)
         .delete();
   }
-  
 
 }

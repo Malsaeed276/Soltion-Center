@@ -6,8 +6,7 @@ import 'package:soltion_center/models/category_model.dart';
 import '../services/category_service.dart';
 
 class CategoryController with ChangeNotifier {
-  final themeBox = Hive.box('theme');
-  final routeBox = Hive.box('route');
+
 
   final CategoryService _categoryService = CategoryService();
   List<CategoryModel> categories = [];
@@ -15,13 +14,6 @@ class CategoryController with ChangeNotifier {
   var categoryNameController = TextEditingController();
   var categoryDescriptionController = TextEditingController();
   CategoryModel? categoryModel;
-
-  String get getCurrentRoute =>
-      routeBox.get('currentRoute', defaultValue: '/HomePage');
-
-  set setCurrentRoute(String route) {
-    routeBox.put('currentRoute', route);
-  }
 
   bool _isLogin = true;
   bool _isFilled = false;
@@ -44,11 +36,14 @@ class CategoryController with ChangeNotifier {
       if (categoryNameController.text.isEmpty ||
           categoryDescriptionController.text.isEmpty) {
         _isFilled = false;
+        //TODO send back that the fields is empty
         notifyListeners();
       } else {
         _isFilled = true;
         notifyListeners();
       }
+    }else {
+      //TODO add the login error
     }
   }
 
@@ -93,6 +88,9 @@ class CategoryController with ChangeNotifier {
     categoryDescriptionController.clear();
     setIsFilled = false;
   }
+
+  //TODO Add Categories controller
+  //Add Categories işlemi
 
   // Kategori silme işlemi
   Future<void> deleteCategory(String categoryId) async {
