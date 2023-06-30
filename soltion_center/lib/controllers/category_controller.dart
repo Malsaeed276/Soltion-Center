@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+
 import 'package:soltion_center/models/category_model.dart';
 
 import '../services/category_service.dart';
@@ -71,26 +71,31 @@ class CategoryController with ChangeNotifier {
     return null;
   }
 
-  // Kategori ekleme işlemi
-  Future<void> addCategory() async {
-    CategoryModel categoryModel = CategoryModel(
-        categoryName: categoryNameController.text.trim(),
-        categoryDescription: categoryDescriptionController.text.trim());
+  // add category
+ Future<void> addCategory(List<CategoryModel> categories) async {
+ 
+    for (var category in categories) {
+      if (category.categoryName!.isEmpty || category.categoryDescription!.isEmpty) {
+        _isFilled = false;
+        notifyListeners();
+        return;
+      }
 
-    try {
-      await _categoryService.addCategory(categoryModel);
-      // Kategoriyi ekledikten sonra kategorileri tekrar çek ve güncelle
-      await getAllCategories();
-    } catch (e) {
-      print(e);
-    }
-    categoryNameController.clear();
-    categoryDescriptionController.clear();
-    setIsFilled = false;
   }
 
-  //TODO Add Categories controller
-  //Add Categories işlemi
+  try {
+    await _categoryService.addCategory(categories);
+  
+  } catch (e) {
+    print(e);
+  }
+
+  // Gerekli alanlar doluysa veya giriş yapılmamışsa, temizleme işlemleri yapılır.
+  categoryNameController.clear();
+  categoryDescriptionController.clear();
+  setIsFilled = false;
+}
+
 
   // Kategori silme işlemi
   Future<void> deleteCategory(String categoryId) async {

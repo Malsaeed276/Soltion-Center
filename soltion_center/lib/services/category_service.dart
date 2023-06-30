@@ -40,24 +40,39 @@ class CategoryService {
     }
   }
 
-// add category to db
-  Future<void> addCategory(CategoryModel category)async {
-      await db
-        .collection("categories")
-        .doc(category.categoryId)
-        .set(category.toJson());
-  }
 
-  //TODO add categories to db
-  // add categories to db
-  // Input -> (List[CategoryModel] categories)
+// add category to db ,Input -> (List[CategoryModel] categories)
+Future<void> addCategory(List<CategoryModel> categories) async {
+  for (var category in categories) {
+    final categoryRef = db.collection("categories").doc(category.categoryId);
+    final categorySnapshot = await categoryRef.get();
+
+    if (categorySnapshot.exists) {
+      // Kategori zaten var, uyarı ver veya isterseniz üzerine yazma yapma.
+      print("Uyarı: ${category.categoryName} adlı kategori zaten mevcut.");
+    } else {
+      // Kategori yok, yeni bir kayıt olarak ekleyelim.
+      await categoryRef.set(category.toJson());
+    }
+  }
+}
+
+ 
 
 // delete category 
-  Future<void> deleteCategory(String categoryId)async {    
-      await db
-        .collection("categories")
-        .doc(categoryId)
-        .delete();
+  Future<void> deleteCategory(String categoryId)async {  
+
+  final categoryDocRef = db.collection("categories").doc(categoryId);
+  final categorySnapshot = await categoryDocRef.get();
+
+  if (categorySnapshot.exists) {
+    // Eğer kategori varsa, silme işlemini gerçekleştir
+    await categoryDocRef.delete();
+    print("Kategori başarıyla silindi");
+  } else {
+    // Eğer kategori yoksa, hata mesajı ver
+    print("Silinmek istenen kategori bulunamadı");
+  }
   }
 
 }
