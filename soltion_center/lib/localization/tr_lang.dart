@@ -6,7 +6,7 @@ class TRLocalization implements Localization{
   String? appDescription = 'Solution Center uygulaması, üniversite öğrencilerini hedef alarak onlar arasında bir dayanışma ve bilgi paylaşım platformu olarak tasarlanmış bir mobil uygulamadır.  Üniversite hayatı, öğrenciler için birçok fırsat ve deneyim sunmasının yanı sıra çeşitli zorluklar ve problemler de içerir. Üniversite yaşamını kolaylaştırmak ve birbirlerine yardımcı olmak isteyen öğrenciler arasında bir bağlantı noktası sunmayı amaçlayan bu uygulama sayesinde karşılaşılan problemlere öğrenciler daha hızlı ve etkili çözümler bulabilir.';
 
   @override
-  String? appTitle = 'Çözüm Merkezi';
+  String? appTitle = 'Solution Center';
 
   @override
   String? email = 'E-posta';
@@ -27,13 +27,13 @@ class TRLocalization implements Localization{
   String? login = 'Giriş';
 
   @override
-  String? loginText = 'Zaten hesabınız var mı?';
+  String? loginText = 'Hesabınız var mı?';
 
   @override
   String? password = 'Şifre';
 
   @override
-  String? register = 'Kayd ol';
+  String? register = 'Kaydol';
 
   @override
   String? registerText = 'Henüz bir hesabınız yok mu?';
@@ -45,7 +45,7 @@ class TRLocalization implements Localization{
   String? userNotFound = 'Kullanıcı Bulunamadı';
 
   @override
-  String? accept = 'Kabul';
+  String? accept = 'Kabul et';
 
   @override
   String? dark = 'karanlık';
@@ -77,7 +77,7 @@ class TRLocalization implements Localization{
       'Şu anda internet bağlantısı algılanmadı. Bu oyun, oyun verilerini sürekli güncellemek için internet bağlantısına ihtiyaç duyar. Devam etmek için lütfen tekrar bağlanın';
 
   @override
-  String? light = 'Aydınlık';
+  String? light = 'aydınlık';
 
   @override
   String? largeWebViewError =
@@ -124,7 +124,7 @@ class TRLocalization implements Localization{
   String? enterYourNameAndSurname = 'Adınızı ve soyadınızı giriniz';
 
   @override
-  String? enterYourPassword = 'şifrenizi giriniz';
+  String? enterYourPassword = 'Şifrenizi giriniz';
 
   @override
   String? nameSurname = 'Ad Soyad';
