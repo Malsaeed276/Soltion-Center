@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:soltion_center/controllers/localization_controller.dart';
 
 abstract class Localization {

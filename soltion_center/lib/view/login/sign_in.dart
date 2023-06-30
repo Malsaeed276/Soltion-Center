@@ -1,6 +1,5 @@
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/localization_controller.dart';
-import 'package:soltion_center/units/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:soltion_center/units/logo.dart';
 

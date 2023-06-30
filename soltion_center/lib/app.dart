@@ -7,7 +7,6 @@ import 'package:soltion_center/view/profile/profile.dart';
 import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
 import 'view/over_screens/apply_for_each_page.dart';
-import 'view/over_screens/over_screens.dart';
 import 'units/theme.dart';
 import 'view/login/intro.dart';
 

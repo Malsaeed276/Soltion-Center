@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/user_controller.dart';
 
 import 'app.dart';
+import 'controllers/category_controller.dart';
 import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
 import 'firebase_options.dart';
@@ -41,6 +42,8 @@ void main() async {
         ChangeNotifierProvider(create: (context) => LocalizationController()),
         ChangeNotifierProvider(create: (context) => ConnectionController()),
         ChangeNotifierProvider(create: (context) => UserController()),
+        ChangeNotifierProvider(create: (context) => CategoryController()),
+        
       ],
       child: const MyApp(),
     ),
