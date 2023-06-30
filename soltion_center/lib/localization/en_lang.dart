@@ -22,13 +22,13 @@ class ENLocalization implements Localization {
     'tr': 'Turkish'
   };
   @override
-  String? logOut;
+  String? logOut = 'Log Out';
 
   @override
   String? login = 'Log In';
 
   @override
-  String? loginText;
+  String? loginText = 'Do you have an account';
 
   @override
   String? password = 'Password';
