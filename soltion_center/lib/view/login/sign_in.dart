@@ -1,7 +1,9 @@
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/localization_controller.dart';
+import 'package:soltion_center/units/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:soltion_center/units/logo.dart';
+
 
 class SignIn extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -13,7 +15,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final theme = Theme.of(context);
-
+    final lang = Provider.of<LocalizationController>(context, listen: true).getLanguage();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -40,19 +42,30 @@ class SignIn extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 25,
-                ),
-                const Text("Log in", style: TextStyle(fontSize: 30),),
+                ), 
+                const Text('Solution Center', style: TextStyle(fontSize: 30),),
                 const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
-                TextFormField(decoration: const InputDecoration(labelText: 'e-mail', hintText: 'e-mailinizi giriniz'),
-                controller: emailController,
-                ),
+                Text(lang.login!, style: const TextStyle(fontSize: 30),),
                 const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'şifre', hintText: 'şifrenizi giriniz'),
+                  decoration: InputDecoration( 
+                    prefixIcon:const Icon(Icons.mail), 
+                    labelText: lang.email, 
+                    hintText: lang.enterYourEmail),
+                  controller: emailController),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: InputDecoration( 
+                    prefixIcon:const Icon(Icons.password_rounded),
+                    labelText: lang.password,
+                    hintText: lang.enterYourPassword,
+                     ),
                   controller: passwordController),
                 const SizedBox(
                   height: 20,
@@ -68,7 +81,7 @@ class SignIn extends StatelessWidget {
 
                           },
                   child: Text(
-                    "Log In",
+                    lang.login!,
                     style: TextStyle(
                       color: theme.colorScheme.onPrimary,
                       fontSize: 20,
@@ -78,6 +91,11 @@ class SignIn extends StatelessWidget {
                 ),
               ),]
                 ),
+      )
+      ,
+        );
+}
+}
       )
       ,
         );
