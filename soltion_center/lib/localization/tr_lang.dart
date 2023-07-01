@@ -45,6 +45,9 @@ class TRLocalization implements Localization{
   String? userNotFound = 'Kullanıcı Bulunamadı';
 
   @override
+  String? alreadyHaveAnAccount = 'Zaten bir hesabınız var mı?';
+
+  @override
   String? accept = 'Kabul et';
 
   @override
