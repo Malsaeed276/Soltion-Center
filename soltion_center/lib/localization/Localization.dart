@@ -25,6 +25,11 @@ abstract class Localization {
   late String? profile;
   late String? alreadyHaveAnAccount;
 
+  //Validation messages
+  late String? onlyLettersAndNoSpaces;
+  late String? validSchoolEmail;
+  late String? passwordRules;
+
   //buttons
   late String? accept;
   late String? theme;
