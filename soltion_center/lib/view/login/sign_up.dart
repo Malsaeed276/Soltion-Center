@@ -41,8 +41,12 @@ class SignUp extends StatelessWidget {
               TextFormField(
                 decoration: InputDecoration(labelText: lang.nameSurname),
                 validator: (value) {
+                  String pattern = r'^[a-zA-Z]*$';
+                  RegExp regex = RegExp(pattern);
                   if (value!.isEmpty) {
                     return lang.enterYourNameAndSurname;
+                  } else if (!regex.hasMatch(value)) {
+                    return 'Lütfen sadece harf kullanın ve boşluk bırakmayın';
                   }
                   return null;
                 },
@@ -51,7 +55,7 @@ class SignUp extends StatelessWidget {
                 decoration: InputDecoration(labelText: lang.email),
                 validator: (value) {
                   String pattern =
-                      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(edu)$';
+                      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu(\.[a-zA-Z]{2,})?$';
                   RegExp regex = RegExp(pattern);
                   if (!regex.hasMatch(value!)) {
                     return 'Lütfen geçerli bir okul e-postası girin';
