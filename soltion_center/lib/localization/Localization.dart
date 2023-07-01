@@ -23,6 +23,7 @@ abstract class Localization {
   late String? loginText;
   late String? userNotFound;
   late String? profile;
+  late String? alreadyHaveAnAccount;
 
   //buttons
   late String? accept;
