@@ -47,7 +47,7 @@ class SignUp extends StatelessWidget {
                   if (value!.isEmpty) {
                     return lang.enterYourNameAndSurname;
                   } else if (!regex.hasMatch(value)) {
-                    return 'Lütfen sadece harf kullanın ve boşluk bırakmayın';
+                    return lang.onlyLettersAndNoSpaces;
                   }
                   return null;
                 },
@@ -55,11 +55,10 @@ class SignUp extends StatelessWidget {
               TextFormField(
                 decoration: InputDecoration(labelText: lang.email),
                 validator: (value) {
-                  String pattern =
-                      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu(\.[a-zA-Z]{2,})?$';
+                  String pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu(\.[a-zA-Z]{2,})?$';
                   RegExp regex = RegExp(pattern);
                   if (!regex.hasMatch(value!)) {
-                    return 'Lütfen geçerli bir okul e-postası girin';
+                    return lang.validSchoolEmail;
                   } else {
                     return null;
                   }
@@ -69,11 +68,10 @@ class SignUp extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(labelText: lang.password),
                 validator: (value) {
-                  String pattern =
-                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
+                  String pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
                   RegExp regex = RegExp(pattern);
                   if (!regex.hasMatch(value!)) {
-                    return 'Şifre en az 8 karakter, 1 sayı, 1 küçük ve 1 büyük harf içermeli';
+                    return lang.passwordRules;
                   } else {
                     return null;
                   }
