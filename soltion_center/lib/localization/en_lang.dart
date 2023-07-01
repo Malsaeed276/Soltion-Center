@@ -46,6 +46,9 @@ class ENLocalization implements Localization {
   String? userNotFound;
 
   @override
+  String? alreadyHaveAnAccount = 'Already have an account?';
+
+  @override
   String? accept = 'Accept';
 
   @override
