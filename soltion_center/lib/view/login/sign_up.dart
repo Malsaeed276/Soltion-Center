@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/units/logo.dart';
 import '../../controllers/localization_controller.dart';
+import '../login/login_page.dart'; 
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -101,6 +102,16 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
               ),
+              Spacer(), 
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                child: Text(lang.alreadyHaveAnAccount!, style: TextStyle(color: Colors.blue)),
+              ),
             ],
           ),
         ),
@@ -108,5 +119,6 @@ class SignUp extends StatelessWidget {
     );
   }
 }
+
 
 
