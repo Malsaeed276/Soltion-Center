@@ -47,6 +47,15 @@ class ENLocalization implements Localization {
 
   @override
   String? alreadyHaveAnAccount = 'Already have an account?';
+  
+  @override
+  String? onlyLettersAndNoSpaces = 'Please only use letters and no spaces';
+
+  @override
+  String? validSchoolEmail = 'Please enter a valid school email';
+
+  @override
+  String? passwordRules = 'Password must have at least 8 characters, 1 number, 1 uppercase and 1 lowercase letter';
 
   @override
   String? accept = 'Accept';
