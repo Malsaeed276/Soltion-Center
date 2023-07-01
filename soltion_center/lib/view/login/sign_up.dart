@@ -5,7 +5,7 @@ import '../../controllers/localization_controller.dart';
 import '../login/login_page.dart'; 
 
 class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,18 +83,17 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: RawMaterialButton(
-                  fillColor: theme.colorScheme.surfaceTint ,
+                  fillColor: theme.colorScheme.primary ,
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('İşlem yapılıyor')));
                     }
                   },
                   child: Text(
                     lang.accept!,
-                    style: theme.textTheme.bodyMedium?.copyWith(
+                    style: theme.textTheme.bodyText1?.copyWith(
                       color: theme.colorScheme.onPrimary,
                     ),
                   ),
@@ -117,6 +116,3 @@ class SignUp extends StatelessWidget {
     );
   }
 }
-
-
-
