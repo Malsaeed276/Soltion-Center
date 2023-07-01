@@ -46,6 +46,15 @@ class TRLocalization implements Localization{
 
   @override
   String? alreadyHaveAnAccount = 'Zaten bir hesabınız var mı?';
+  
+  @override
+  String? onlyLettersAndNoSpaces = 'Lütfen yalnızca harf kullanın ve boşluk bırakmayın';
+
+  @override
+  String? validSchoolEmail = 'Lütfen geçerli bir okul e-postası girin';
+
+  @override
+  String? passwordRules = 'Şifreniz en az 8 karakter, 1 rakam, 1 büyük harf ve 1 küçük harf içermeli';
 
   @override
   String? accept = 'Kabul et';
