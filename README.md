@@ -69,13 +69,26 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 # Sprint 2
 - Sprint Notları: Bu Sprint için hedef olarak koyduğumuz logo, renk temaları, dil seçeneği, info, kayıt ol ve giriş sayfaları ile service ve firebase görevleri  backlog ve done kısımlarında takım üyelerinin gerçekleştirdiği görevlerle birlikte yer alıyor.
 - Sprint içinde tamamlanması tahmin edilen puan: 120 Puan
-- Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 2. ve 3. sprint için eşit derecede görev tanımladığımızdan ikisinin de 120 puan olmasına karar verildi.
-- Daily Scrum: 2. Sprint için Daily Scrum toplantıları Google Meet ve What
-sapp üzerinden yapılmış, ayrıca yüz yüze de toplantı alınmıştır. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: 
+- Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 2. ve 3. sprint için eşit derecede görev tanımlandığından ikisinin de 120 puan olmasına karar verildi.
+- Daily Scrum: 2. Sprint için Daily Scrum toplantıları Google Meet ve Whatsapp üzerinden yapılmış, ayrıca yüz yüze de toplantı alınmıştır. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 - Sprint board update: Sprint board screenshotları:
+
+ ![sprint backlog ss](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/5c8e9786-9f15-4e7d-95be-4f123381652b)
+
 - Ürün Durumu :
-- Sprint Review: 
+
+![WhatsApp Image 2023-07-02 at 12 39 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/8649eac1-f8dd-4f62-bc93-4b02c36afa7e)
+![WhatsApp Image 2023-07-02 at 12 39 03](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/f78dd639-0c24-4d73-91b5-894ce8ea3d5d)
+![WhatsApp Image 2023-07-02 at 12 39 12](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/481e9acd-19b8-45cf-9bce-26edc1683345)
+
+- Sprint Review:
+  * Uygulamanın logosu ve renk teması tasarlanmıştır.
+  * Uygulamaya Türkçe/İngilizce olacak şekilde dil seçeneği eklenmiştir.
+  * İnfo, kayıt ol ve giriş sayfaları hazırlanmıştır.
+  * Service ve firebase kısımları halledilmiştir.
 - Sprint Retrospective:
+  * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
+  * Daha sık toplantı yapılmasına karar verilmiştir.
 
 
 
