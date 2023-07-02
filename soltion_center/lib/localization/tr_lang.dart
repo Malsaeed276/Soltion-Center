@@ -141,5 +141,8 @@ class TRLocalization implements Localization{
   @override
   String? nameSurname = 'Ad Soyad';
 
+  @override
+  String? createNewAccount = 'Yeni bir hesap oluştur?';
+
 
 }

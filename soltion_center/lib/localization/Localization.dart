@@ -59,6 +59,7 @@ abstract class Localization {
   late String? wrongPasswordMessage;
   late String? signOutMessage;
   late String? signOutErrorMessage;
+  late String? createNewAccount;
 
   // Logout Dialog
   late String? logoutDialogDescriptionText;

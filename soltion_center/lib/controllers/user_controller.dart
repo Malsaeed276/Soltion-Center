@@ -10,7 +10,6 @@ import 'package:soltion_center/view/widgets/dialog/logout_dialog.dart';
 
 class UserController with ChangeNotifier {
   final themeBox = Hive.box('theme');
-  final routeBox = Hive.box('route');
   var usernameController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -21,7 +20,7 @@ class UserController with ChangeNotifier {
   bool _isLogin = true;
   bool _isFilled = false;
   bool _isApiLoading = false;
-  bool _passwordView = false;
+  bool _passwordView = true;
 
   bool get getPasswordView => _passwordView;
 
@@ -31,12 +30,6 @@ class UserController with ChangeNotifier {
 
   bool get getIsFilled => _isFilled;
 
-  String get getCurrentRoute =>
-      routeBox.get('currentRoute', defaultValue: '/HomePage');
-
-  set setCurrentRoute(String route) {
-    routeBox.put('currentRoute', route);
-  }
 
   setPasswordView() {
     _passwordView = !_passwordView;
@@ -152,13 +145,12 @@ class UserController with ChangeNotifier {
       },
     ).then((value) => value
         ? Navigator.of(context).pushNamedAndRemoveUntil(
-        '/AuthPage', (Route<dynamic> route) => false)
+        '/SignIn', (Route<dynamic> route) => false)
         : null);
     currentUser = null;
   }
 
   void _authSuccess(BuildContext context) {
-    setCurrentRoute = '/HomePage';
     Navigator.of(context)
         .pushNamedAndRemoveUntil('/HomePage', (Route<dynamic> route) => false);
   }

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/user_controller.dart';
 import 'package:soltion_center/units/logo.dart';
 import '../../controllers/localization_controller.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
+  SignUp({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
     final lang = Provider.of<LocalizationController>(context, listen: true)
         .getLanguage();
+    final userController = Provider.of<UserController>(context, listen: true);
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -31,7 +33,7 @@ class SignUp extends StatelessWidget {
         ],
       ),
       body: Form(
-        key: formKey,
+        key: _formKey,
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -43,96 +45,111 @@ class SignUp extends StatelessWidget {
                 lang.appTitle!,
                 style: const TextStyle(fontSize: 30),
               ),
-             Container(
-               decoration: BoxDecoration(
-                 color: theme.colorScheme.surfaceVariant,
-                 borderRadius: const BorderRadius.only(
-                   topRight: Radius.circular(35),
-                   topLeft: Radius.circular(35),
-                 )
-               ),
-               child: Padding(
-                 padding: const EdgeInsets.all(16.0),
-                 child: Column(
-                   children: [
-                     Text(
-                       lang.register!,
-                       style: const TextStyle(fontSize: 30),
-                     ),
-                     TextFormField(
-                       decoration: InputDecoration(labelText: lang.nameSurname),
-                       validator: (value) {
-                         String pattern = r'^[a-zA-Z]*$';
-                         RegExp regex = RegExp(pattern);
-                         if (value!.isEmpty) {
-                           return lang.enterYourNameAndSurname;
-                         } else if (!regex.hasMatch(value)) {
-                           return lang.onlyLettersAndNoSpaces;
-                         }
-                         return null;
-                       },
-                     ),
-                     TextFormField(
-                       decoration: InputDecoration(labelText: lang.email,
-                     ),
-                       validator: (value) {
-                         String pattern =
-                             r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu(\.[a-zA-Z]{2,})?$';
-                         RegExp regex = RegExp(pattern);
-                         if (!regex.hasMatch(value!)) {
-                           return lang.validSchoolEmail;
-                         } else {
-                           return null;
-                         }
-                       },
-                     ),
-                     TextFormField(
-                       obscureText: true,
-                       decoration: InputDecoration(labelText: lang.password),
-                       validator: (value) {
-                         String pattern =
-                             r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
-                         RegExp regex = RegExp(pattern);
-                         if (!regex.hasMatch(value!)) {
-                           return lang.passwordRules;
-                         } else {
-                           return null;
-                         }
-                       },
-                     ),
-                     const SizedBox(
-                       height: 24,
-                     ),
-                     SizedBox(
-                       width: double.infinity,
-                       child: RawMaterialButton(
-                         fillColor: theme.colorScheme.primary,
-                         padding: const EdgeInsets.symmetric(vertical: 15.0),
-                         shape: RoundedRectangleBorder(
-                             borderRadius: BorderRadius.circular(30.0)),
-                         onPressed: () {
-                           if (formKey.currentState!.validate()) {}
-                         },
-                         child: Text(
-                           lang.accept!,
-                           style: theme.textTheme.bodyText1?.copyWith(
-                             color: theme.colorScheme.onPrimary,
-                           ),
-                         ),
-                       ),
-                     ),
-                     TextButton(
-                       onPressed: () {
-                         Navigator.pushReplacementNamed(context, '/SignIn');
-                       },
-                       child: Text(
-                         lang.alreadyHaveAnAccount!,
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
-             )
+              Container(
+                decoration: BoxDecoration(
+                    color: theme.colorScheme.surfaceVariant,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(35),
+                      topLeft: Radius.circular(35),
+                    )),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        lang.register!,
+                        style: const TextStyle(fontSize: 30),
+                      ),
+                      TextFormField(
+                        controller: userController.usernameController,
+                        decoration:
+                            InputDecoration(
+                                labelText: lang.nameSurname,
+                                hintText: lang.enterYourNameAndSurname,
+                            ),
+                        validator: (value) {
+                          String pattern = r'^[a-zA-Z]*$';
+                          RegExp regex = RegExp(pattern);
+                          if (value!.isEmpty) {
+                            return lang.enterYourNameAndSurname;
+                          } else if (!regex.hasMatch(value)) {
+                            return lang.onlyLettersAndNoSpaces;
+                          }
+                          return null;
+                        },
+                      ),
+                      TextFormField(
+                        controller: userController.emailController,
+                        decoration: InputDecoration(
+                          labelText: lang.email,
+                          hintText: lang.enterYourEmail,
+                        ),
+                        validator: (value) {
+                          String pattern =
+                              r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.edu(\.[a-zA-Z]{2,})?$';
+                          RegExp regex = RegExp(pattern);
+                          if (!regex.hasMatch(value!)) {
+                            return lang.validSchoolEmail;
+                          } else {
+                            return null;
+                          }
+                        },
+                      ),
+                      TextFormField(
+                        controller: userController.passwordController,
+                        obscureText: userController.getPasswordView,
+                        decoration: InputDecoration(
+                            labelText: lang.password,
+                             hintText: lang.enterYourPassword,
+                          suffix:  IconButton(icon: Icon(userController.getPasswordView == true
+                              ? Icons.visibility : Icons.visibility_off),onPressed: (){
+                            userController.setPasswordView();
+                          },),
+                        ),
+                        validator: (value) {
+                          String pattern =
+                              r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
+                          RegExp regex = RegExp(pattern);
+                          if (!regex.hasMatch(value!)) {
+                            return lang.passwordRules;
+                          } else {
+                            return null;
+                          }
+                        },
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: RawMaterialButton(
+                          fillColor: theme.colorScheme.primary,
+                          padding: const EdgeInsets.symmetric(vertical: 15.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0)),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {}
+                          },
+                          child: Text(
+                            lang.accept!,
+                            style: theme.textTheme.bodyText1?.copyWith(
+                              color: theme.colorScheme.onPrimary,
+                            ),
+                          ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/SignIn');
+                        },
+                        child: Text(
+                          lang.alreadyHaveAnAccount!,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

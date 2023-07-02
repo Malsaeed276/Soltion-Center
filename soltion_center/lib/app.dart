@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         '/SignIn': (context) =>  ApplyForEachPage(
           child: SignIn(),
         ),
-        '/SignUp': (context) => const ApplyForEachPage(
+        '/SignUp': (context) =>  ApplyForEachPage(
           child: SignUp(),
         ),
         '/Profile': (context) => const ApplyForEachPage(

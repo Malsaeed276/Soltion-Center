@@ -140,4 +140,7 @@ class ENLocalization implements Localization {
 
   @override
   String? nameSurname = 'Name & Surname';
+
+  @override
+  String? createNewAccount = 'Create a new account?';
 }
