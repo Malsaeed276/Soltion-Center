@@ -87,7 +87,7 @@ class SignIn extends StatelessWidget {
                           fontSize: 20,
                           fontWeight: FontWeight.bold
                       ),
-                    )
+                    ),
                 ),
               ),
             ]
