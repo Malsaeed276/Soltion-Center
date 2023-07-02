@@ -68,7 +68,7 @@ class SignUp extends StatelessWidget {
                                 hintText: lang.enterYourNameAndSurname,
                             ),
                         validator: (value) {
-                          String pattern = r'^[a-zA-Z]*$';
+                          String pattern = r'^[a-zA-Z_ ]*$';
                           RegExp regex = RegExp(pattern);
                           if (value!.isEmpty) {
                             return lang.enterYourNameAndSurname;
@@ -128,9 +128,17 @@ class SignUp extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0)),
                           onPressed: () {
-                            if (_formKey.currentState!.validate()) {}
+                            userController.setIsFilled = _formKey.currentState!.validate();
+                            if (_formKey.currentState!.validate() && userController.getIsLoading == false) {
+                                userController.register(context);
+                            }
                           },
-                          child: Text(
+                          child: userController.getIsLoading
+                              ? Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 50.0,vertical: 8,),
+                                child: LinearProgressIndicator(color: theme.colorScheme.onPrimary,),
+                              )
+                              : Text(
                             lang.accept!,
                             style: theme.textTheme.bodyText1?.copyWith(
                               color: theme.colorScheme.onPrimary,

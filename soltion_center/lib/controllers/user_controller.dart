@@ -19,14 +19,14 @@ class UserController with ChangeNotifier {
   String message = 'error';
   bool _isLogin = true;
   bool _isFilled = false;
-  bool _isApiLoading = false;
+  bool _isLoading = false;
   bool _passwordView = true;
 
   bool get getPasswordView => _passwordView;
 
   bool get getIsLogin => _isLogin;
 
-  bool get getIsApiLoading => _isApiLoading;
+  bool get getIsLoading => _isLoading;
 
   bool get getIsFilled => _isFilled;
 
@@ -36,12 +36,13 @@ class UserController with ChangeNotifier {
     notifyListeners();
   }
 
-  set setIsApiLoading(bool condition) {
-    _isApiLoading = condition;
+  set setIsLoading(bool condition) {
+    _isLoading = condition;
   }
 
   set setIsFilled(bool condition) {
     _isFilled = condition;
+    notifyListeners();
   }
 
   String get getThemeMode =>
@@ -113,7 +114,7 @@ class UserController with ChangeNotifier {
   }
 
   void signIn(BuildContext context) async {
-    setIsApiLoading = true;
+    setIsLoading = true;
     notifyListeners();
     await _authService
         .signIn(emailController.text, passwordController.text, context)
@@ -132,7 +133,7 @@ class UserController with ChangeNotifier {
           passwordController.clear();
           setIsFilled = false;
           _authSuccess(context);
-          setIsApiLoading = false;
+          setIsLoading = false;
         });
       }
     });
@@ -152,7 +153,7 @@ class UserController with ChangeNotifier {
 
   void _authSuccess(BuildContext context) {
     Navigator.of(context)
-        .pushNamedAndRemoveUntil('/HomePage', (Route<dynamic> route) => false);
+        .pushNamedAndRemoveUntil('/Profile', (Route<dynamic> route) => false);
   }
 
   void register(BuildContext context) async {
@@ -162,7 +163,7 @@ class UserController with ChangeNotifier {
       password: passwordController.text,
       admin: false,
     );
-    setIsApiLoading = true;
+    setIsLoading = true;
     notifyListeners();
     await AuthService().signUp(user, context).whenComplete(
           () {
@@ -177,7 +178,7 @@ class UserController with ChangeNotifier {
         _updateUser(user);
         setIsFilled = false;
         _authSuccess(context);
-        setIsApiLoading = false;
+        setIsLoading = false;
       }
     });
   }

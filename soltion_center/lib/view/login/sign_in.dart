@@ -66,8 +66,8 @@ class SignIn extends StatelessWidget {
                     ),
                     TextFormField(
                         decoration: InputDecoration(
-                            labelText: lang.email,
-                            hintText: lang.enterYourEmail,
+                          labelText: lang.email,
+                          hintText: lang.enterYourEmail,
                         ),
                         validator: (value) {
                           String pattern =
@@ -88,10 +88,14 @@ class SignIn extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: lang.password,
                           hintText: lang.enterYourPassword,
-                          suffix:  IconButton(icon: Icon(userController.getPasswordView == true
-                              ? Icons.visibility : Icons.visibility_off),onPressed: (){
-                            userController.setPasswordView();
-                          },),
+                          suffix: IconButton(
+                            icon: Icon(userController.getPasswordView == true
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                            onPressed: () {
+                              userController.setPasswordView();
+                            },
+                          ),
                         ),
                         validator: (value) {
                           String pattern =
@@ -114,14 +118,31 @@ class SignIn extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0)),
-                        onPressed: () {},
-                        child: Text(
-                          lang.login!,
-                          style: TextStyle(
-                              color: theme.colorScheme.onPrimary,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
+                        onPressed: () {
+                          userController.setIsFilled =
+                              _formKey.currentState!.validate();
+                          if (_formKey.currentState!.validate() &&
+                              userController.getIsLoading == false) {
+                            userController.signIn(context);
+                          }
+                        },
+                        child: userController.getIsLoading
+                            ? Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 50.0,
+                                  vertical: 8,
+                                ),
+                                child: LinearProgressIndicator(
+                                  color: theme.colorScheme.onPrimary,
+                                ),
+                              )
+                            : Text(
+                                lang.login!,
+                                style: TextStyle(
+                                    color: theme.colorScheme.onPrimary,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
                       ),
                     ),
                     TextButton(
