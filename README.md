@@ -65,3 +65,20 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 - Sprint Retrospective:
    * Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
    * Takım üyelerinin gelecek sprintlerde aktif olması gerektiğine vurgu yapılmıştır.
+
+# Sprint 2
+- Sprint Notları: Bu Sprint için hedef olarak koyduğumuz logo, renk temaları, dil seçeneği, info, kayıt ol ve giriş sayfaları ile service ve firebase görevleri  backlog ve done kısımlarında takım üyelerinin gerçekleştirdiği görevlerle birlikte yer alıyor.
+- Sprint içinde tamamlanması tahmin edilen puan: 120 Puan
+- Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 2. ve 3. sprint için eşit derecede görev tanımladığımızdan ikisinin de 120 puan olmasına karar verildi.
+- Daily Scrum: 2. Sprint için Daily Scrum toplantıları Google Meet ve What
+sapp üzerinden yapılmış, ayrıca yüz yüze de toplantı alınmıştır. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: 
+- Sprint board update: Sprint board screenshotları:
+- Ürün Durumu :
+- Sprint Review: 
+- Sprint Retrospective:
+
+
+
+
+
+
