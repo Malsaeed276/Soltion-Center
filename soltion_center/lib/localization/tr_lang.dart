@@ -144,5 +144,17 @@ class TRLocalization implements Localization{
   @override
   String? createNewAccount = 'Yeni bir hesap oluştur?';
 
+  @override
+  String? profileInfo = 'Profil bilgisi';
+
+  @override
+  String? categories = 'Kategoriler';
+
+  @override
+  String? category = 'Kategori';
+
+  @override
+  String? history = 'Sorunun Geçmişi';
+
 
 }

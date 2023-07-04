@@ -143,4 +143,16 @@ class ENLocalization implements Localization {
 
   @override
   String? createNewAccount = 'Create a new account?';
+
+  @override
+  String? profileInfo = 'Profile Info';
+
+  @override
+  String? categories = 'Categories';
+
+  @override
+  String? category = 'Category';
+
+  @override
+  String? history = 'History';
 }

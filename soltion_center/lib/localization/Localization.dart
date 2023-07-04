@@ -73,4 +73,8 @@ abstract class Localization {
   late String? enterYourEmail;
   late String? enterYourNameAndSurname;
 
+  late String? profileInfo;
+  late String? history;
+  late String? categories;
+  late String? category;
 }
