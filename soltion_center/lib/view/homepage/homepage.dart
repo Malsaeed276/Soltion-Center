@@ -6,7 +6,7 @@ class Anasayfa extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Anasayfa',
+          lang.homeTitle,
           style: TextStyle(
             color: theme.colorScheme.onPrimary,
           ),
@@ -29,12 +29,12 @@ class Anasayfa extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Hoş geldiniz',
+              lang.welcomeMessage,
               style: theme.textTheme.headline4,
             ),
             SizedBox(height: 16),
             Text(
-              'Lütfen sorununuzu yazın.',
+              lang.writeIssue,
               style: theme.textTheme.bodyText1,
             ),
             SizedBox(height: 24),
@@ -51,7 +51,7 @@ class Anasayfa extends StatelessWidget {
                   Icon(Icons.search, color: theme.colorScheme.primary),
                   SizedBox(width: 8),
                   Text(
-                    'Arama yapın',
+                    lang.search,
                     style: TextStyle(
                       color: theme.colorScheme.onPrimary,
                     ),
