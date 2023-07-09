@@ -164,7 +164,7 @@ class ENLocalization implements Localization {
   String? welcomeMessage => 'Welcome Message';
   
   @override
-  String? writeIssue => 'Write Issue';
+  String? writeIssue => 'Write issue, please.';
   
   @override
   String? search => 'Search';
