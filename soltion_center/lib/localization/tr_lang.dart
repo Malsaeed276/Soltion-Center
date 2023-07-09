@@ -155,6 +155,19 @@ class TRLocalization implements Localization{
 
   @override
   String? history = 'Sorunun Geçmişi';
+  
+  // Homepage
+  @override
+  String? homeTitle => 'Anasayfa';
+  
+  @override
+  String? welcomeMessage => 'Hoş Geldiniz';
+  
+  @override
+  String? writeIssue => 'Lütfen sorununuzu yazın.';
+  
+  @override
+  String? search => 'Ara'
 
 
 }
