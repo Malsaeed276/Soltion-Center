@@ -155,4 +155,17 @@ class ENLocalization implements Localization {
 
   @override
   String? history = 'History';
+  
+  // Homepage
+  @override
+  String? homeTitle => 'Home Title';
+  
+  @override
+  String? welcomeMessage => 'Welcome Message';
+  
+  @override
+  String? writeIssue => 'Write Issue';
+  
+  @override
+  String? search => 'Search';
 }
