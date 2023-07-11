@@ -118,10 +118,10 @@ class AuthService {
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        messageStatus.currentMessage(langMessage.userNotFound!);
+       // messageStatus.currentMessage(langMessage.userNotFound!);
         return false;
       } else if (e.code == 'wrong-password') {
-        messageStatus.currentMessage(langMessage.wrongPasswordMessage!);
+        //messageStatus.currentMessage(langMessage.wrongPasswordMessage!);
         return false;
       } else {
         messageStatus.currentMessage('$e');

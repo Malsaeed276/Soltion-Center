@@ -95,7 +95,7 @@ class CategoryController with ChangeNotifier {
  Future<void> addCategory(List<CategoryModel> categories) async {
  
     for (var category in categories) {
-      if (category.categoryName!.isEmpty || category.categoryDescription!.isEmpty) {
+      if (category.categoryName!.isEmpty) {
         _isFilled = false;
         notifyListeners();
         return;

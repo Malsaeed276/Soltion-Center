@@ -23,7 +23,7 @@ class UserModel {
     email = json['email'];
     username = json['username'];
     admin = json['admin'];
-    categories = json['categories'];
+    categories = json['categories'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {

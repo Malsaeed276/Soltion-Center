@@ -121,6 +121,7 @@ class UserController with ChangeNotifier {
         .whenComplete(
           () {
         showSnackbar(context, message);
+
       },
     ).then((value) async {
       if (value == true) {
@@ -135,6 +136,8 @@ class UserController with ChangeNotifier {
           _authSuccess(context);
           setIsLoading = false;
         });
+      }else {
+        setIsLoading = false;
       }
     });
   }
@@ -145,15 +148,16 @@ class UserController with ChangeNotifier {
         showSnackbar(context, message);
       },
     ).then((value) => value
-        ? Navigator.of(context).pushNamedAndRemoveUntil(
-        '/SignIn', (Route<dynamic> route) => false)
+        ? Navigator.of(context).pushReplacementNamed(
+        '/SignIn')
         : null);
     currentUser = null;
+    notifyListeners();
   }
 
   void _authSuccess(BuildContext context) {
     Navigator.of(context)
-        .pushNamedAndRemoveUntil('/Profile', (Route<dynamic> route) => false);
+        .pushReplacementNamed('/Home');
   }
 
   void register(BuildContext context) async {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/services/auth_service.dart';
 import 'package:soltion_center/view/category/category_page.dart';
 import 'package:soltion_center/view/homepage/home_page.dart';
 import 'package:soltion_center/view/login/sign_in.dart';
@@ -8,13 +9,15 @@ import 'package:soltion_center/view/profile/profile.dart';
 
 import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
+import 'controllers/user_controller.dart';
 import 'view/over_screens/apply_for_each_page.dart';
 import 'units/theme.dart';
 import 'view/intro.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
+  final AuthService _authService = AuthService();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,9 @@ class MyApp extends StatelessWidget {
         colorScheme: darkColorScheme,
         brightness: Brightness.dark,
       ),
-        initialRoute: '/intro',
+        initialRoute:  _authService.getCurrentUser() == null
+            ? '/SignIn'
+            : '/Home',
 
       routes: {
         '/intro': (context) => const ApplyForEachPage(
@@ -53,7 +58,7 @@ class MyApp extends StatelessWidget {
         '/Home': (context) =>  const ApplyForEachPage(
           child: HomePage(),
         ),
-        '/Profile/Category': (context) =>  const ApplyForEachPage(
+        '/Profile/Category': (context) =>  ApplyForEachPage(
           child: CategoryPage(),
         ),
       },
