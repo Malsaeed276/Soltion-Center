@@ -6,36 +6,45 @@ class ProfileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var profileList = ProfileModel().getProfileList(context);
     return Container(
       decoration:  BoxDecoration(
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.surfaceVariant,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         )
       ),
       child: ListView.builder(
-          itemCount: 6,
+          itemCount: profileList.length,
+          shrinkWrap: true,
           itemBuilder: (context,index){
         return Padding(
           padding: const EdgeInsets.all(12.0),
-          child: SizedBox(
-            height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const CircleAvatar(
-                    child: Icon(
-                      Icons.person,
-                      size: 24,
+          child: GestureDetector(
+            onTap: (){
+              profileList[index].onPressed!();
+            },
+            child: SizedBox(
+              height: 50,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                     CircleAvatar(
+                       backgroundColor: theme.colorScheme.primary,
+                      child: Icon(
+                        profileList[index].icon,
+                        color: theme.colorScheme.onPrimary,
+                        size: 24,
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 12,),
-                  Text('Data',style: theme.textTheme.labelLarge!.copyWith(
-                    color: theme.colorScheme.onSecondary,
-                  ),)
-                ],
-              ),),
+                    const SizedBox(width: 12,),
+                    Text('${profileList[index].name}',style: theme.textTheme.labelLarge!.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),)
+                  ],
+                ),),
+          ),
         );
       }),
     );

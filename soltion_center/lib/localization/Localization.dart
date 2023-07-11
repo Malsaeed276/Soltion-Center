@@ -83,5 +83,7 @@ abstract class Localization {
   late String? welcomeMessage;
   late String? writeIssue;
   late String? search;
-  
+
+  late String? homePageTitle;
+  late String? homePageSubTitle;
 }

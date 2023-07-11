@@ -158,16 +158,22 @@ class TRLocalization implements Localization{
   
   // Homepage
   @override
-  String? homeTitle => 'Anasayfa';
+  String? homeTitle = 'Anasayfa';
   
   @override
-  String? welcomeMessage => 'Hoş Geldiniz';
+  String? welcomeMessage = 'Hoş Geldiniz';
   
   @override
-  String? writeIssue => 'Lütfen sorununuzu yazın.';
+  String? writeIssue = 'Lütfen sorununuzu yazın.';
   
   @override
-  String? search => 'Ara'
+  String? search = 'Ara';
+
+  @override
+  String? homePageSubTitle = 'Lütfen sahip olduğunuz sorunu aramaktan çekinmeyin, bulamadıysanız yeni bir sorun oluşturabilirsiniz.';
+
+  @override
+  String? homePageTitle = 'Lütfen bize proboeminizin ne olduğunu söyleyin';
 
 
 }

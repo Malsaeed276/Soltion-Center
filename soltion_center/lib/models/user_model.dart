@@ -1,9 +1,13 @@
+import 'category_model.dart';
+
 class UserModel {
   String? userId;
   String? username;
   String? email;
   String? password;
   bool? admin;
+  //categories ID will be stored here
+  List<String>? categories;
 
   UserModel({
     this.userId,
@@ -11,6 +15,7 @@ class UserModel {
     required this.email,
     required this.password,
     this.admin = false,
+    this.categories,
   });
 
   UserModel.fromJson(Map<String, dynamic> json) {
@@ -18,6 +23,7 @@ class UserModel {
     email = json['email'];
     username = json['username'];
     admin = json['admin'];
+    categories = json['categories'];
   }
 
   Map<String, dynamic> toJson() {
@@ -26,6 +32,7 @@ class UserModel {
     data['email'] = email;
     data['username'] = username;
     data['admin'] = admin ?? false;
+    data['categories'] = categories ?? [];
     return data;
   }
 }

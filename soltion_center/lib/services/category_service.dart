@@ -40,6 +40,26 @@ class CategoryService {
     }
   }
 
+  //get category by id
+  Future<List<CategoryModel>?> getCategoryList(List<String> idList) async {
+    List<CategoryModel>? categories;
+    try {
+      idList.forEach((id) async {
+        var data = await db.collection("categories").doc(id).get();
+
+        categories!.add(CategoryModel.fromJson(data.data()!));
+
+      });
+
+
+      return categories;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return null;
+    }
+  }
 
 // add category to db ,Input -> (List[CategoryModel] categories)
 Future<void> addCategory(List<CategoryModel> categories) async {

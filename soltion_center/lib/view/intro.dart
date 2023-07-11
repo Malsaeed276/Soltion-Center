@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/units/logo.dart';
 
-import '../../controllers/localization_controller.dart';
+import '../controllers/localization_controller.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -57,7 +57,7 @@ class IntroPage extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/SignUp');
+                    Navigator.pushReplacementNamed(context, '/Home');
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(

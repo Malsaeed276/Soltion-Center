@@ -71,6 +71,26 @@ class CategoryController with ChangeNotifier {
     return null;
   }
 
+  // get category by id
+  Future<List<CategoryModel>?> getListOfCategoryById(List<String> categoriesID) async {
+    try {
+      List<CategoryModel>? categories = await _categoryService.getCategoryList(categoriesID);
+      if (categories != null) {
+        // Kategori bulundu
+        categories.forEach((category) {
+          print('Kategori adı: ${category.categoryName}');
+        });
+        return categories;
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return null;
+    }
+    return null;
+  }
+
   // add category
  Future<void> addCategory(List<CategoryModel> categories) async {
  

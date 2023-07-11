@@ -158,14 +158,20 @@ class ENLocalization implements Localization {
   
   // Homepage
   @override
-  String? homeTitle => 'Home Title';
+  String? homeTitle = 'Home';
   
   @override
-  String? welcomeMessage => 'Welcome Message';
+  String? welcomeMessage = 'Welcome Message';
   
   @override
-  String? writeIssue => 'Write issue, please.';
+  String? writeIssue = 'Write issue, please.';
   
   @override
-  String? search => 'Search';
+  String? search = 'Search';
+
+  @override
+  String? homePageSubTitle = 'Please feel free to search for the issue that you have, if you did not find you can create a new issue';
+
+  @override
+  String? homePageTitle = 'Please tell us what is your problem';
 }

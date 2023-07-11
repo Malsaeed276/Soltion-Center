@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/user_controller.dart';
+import 'package:soltion_center/models/profile_model.dart';
 import 'package:soltion_center/units/logo.dart';
 
 part 'profile_header.dart';
@@ -21,6 +22,10 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         title: Text(lang.profile!),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios,),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -28,6 +33,7 @@ class Profile extends StatelessWidget {
             },
             icon: const Icon(Icons.logout),
           ),
+
         ],
       ),
       body: const Column(
