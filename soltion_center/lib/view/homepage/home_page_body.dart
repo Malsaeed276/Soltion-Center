@@ -195,5 +195,5 @@ class _HomePageBodyState extends State<HomePageBody> {
 }
 
 class CategoryPage {
-  static List<String> categories = [  ];
+  static List<String> categories = ['Software','SKOSS','ADDDW',];
 }
