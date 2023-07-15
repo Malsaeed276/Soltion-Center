@@ -37,13 +37,13 @@ class ENLocalization implements Localization {
   String? register = 'Register';
 
   @override
-  String? registerText;
+  String? registerText = 'Already have an account?';
 
   @override
   String? userName = 'User Name';
 
   @override
-  String? userNotFound;
+  String? userNotFound = 'User not found';
 
   @override
   String? alreadyHaveAnAccount = 'Already have an account?';
@@ -55,7 +55,7 @@ class ENLocalization implements Localization {
   String? validSchoolEmail = 'Please enter a valid school email';
 
   @override
-  String? passwordRules = 'Password must have at least 8 characters, 1 number, 1 uppercase and 1 lowercase letter';
+  String? passwordRules = 'Password must have at least 8 characters, 1 number, 1 capital and 1 small letter';
 
   @override
   String? accept = 'Accept';
@@ -89,11 +89,11 @@ class ENLocalization implements Localization {
 
   @override
   String? noInternetWarningDialogText =
-      'No internet connection detected at this time. The game needs an internet connection to constantly update your game data. Please reconnect to continue';
+      'No internet connection detected at this time. The application needs an internet connection to constantly update your data data. Please reconnect to continue';
 
   @override
   String? largeWebViewError =
-      "This device is not supported. Please play the game only on your mobile browser.";
+      "This device is not supported. Please play the application only on your mobile browser.";
 
   // App Messages
   @override
@@ -124,7 +124,7 @@ class ENLocalization implements Localization {
   String? logoutDialogCancelButtonText = 'Cancel';
 
   @override
-  String? logoutDialogLogoutButtonText = 'Logout';
+  String? logoutDialogLogoutButtonText = 'Log out';
 
   @override
   String? profile = 'Profile';
@@ -154,14 +154,14 @@ class ENLocalization implements Localization {
   String? category = 'Category';
 
   @override
-  String? history = 'History';
+  String? history = ' Question History ';
   
   // Homepage
   @override
   String? homeTitle = 'Home';
   
   @override
-  String? welcomeMessage = 'Welcome Message';
+  String? welcomeMessage = 'Welcome ';
   
   @override
   String? writeIssue = 'Write issue, please.';
@@ -174,4 +174,19 @@ class ENLocalization implements Localization {
 
   @override
   String? homePageTitle = 'Please tell us what is your problem';
+
+  @override
+  String? searchForCategory = 'Search for the category';
+
+  @override
+  String? searchForCategoryDes = 'Please to add category you need to search here';
+
+  @override
+  String? yourCategories = 'Your Categories';
+
+  @override
+  String? loading = 'Loading.....';
+
+  @override
+  String? addCategory= ' Add Category';
 }

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/user_controller.dart';
+import 'package:soltion_center/models/category_model.dart';
 import 'package:soltion_center/models/user_model.dart';
 
 class AuthService {
@@ -41,9 +42,69 @@ class AuthService {
     }
   }
 
+
+  Future<void> addCategoryToUser(CategoryModel category) async {
+    try {
+      var data = await db
+          .collection("users")
+          .doc(auth.currentUser!.uid)
+          .collection('category')
+          .doc(category.categoryId)
+          .set(category.toJson());
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  // get user category
+  Future<List<CategoryModel>> getUserCategory() async {
+    List<CategoryModel> categoryList = [];
+    try {
+      var data = await db
+          .collection("users")
+          .doc(auth.currentUser!.uid)
+          .collection('category')
+          .get()
+          .then((event) {
+        for (var doc in event.docs) {
+          categoryList.add(CategoryModel.fromJson(doc.data()));
+        }
+      });
+
+      return categoryList;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return categoryList;
+    }
+  }
+
+  //delete category from user
+  Future<void> deleteCategoryToUser(CategoryModel categoryModel) async {
+    try {
+      var data = await db
+          .collection("users")
+          .doc(auth.currentUser!.uid)
+          .collection('category')
+          .doc(categoryModel.categoryId)
+          .delete();
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
   //get user
   Stream<User?> get user {
     return auth.authStateChanges();
+  }
+
+  User? getUser() {
+    return auth.currentUser;
   }
 
   Future<bool> forgetPassword(String email, BuildContext context) async {

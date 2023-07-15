@@ -62,8 +62,7 @@ class CategoryService {
   }
 
 // add category to db ,Input -> (List[CategoryModel] categories)
-Future<void> addCategory(List<CategoryModel> categories) async {
-  for (var category in categories) {
+Future<void> addCategory(CategoryModel category) async {
     final categoryRef = db.collection("categories").doc(category.categoryId);
     final categorySnapshot = await categoryRef.get();
 
@@ -74,8 +73,9 @@ Future<void> addCategory(List<CategoryModel> categories) async {
       // Kategori yok, yeni bir kayıt olarak ekleyelim.
       await categoryRef.set(category.toJson());
     }
-  }
+
 }
+
 
  
 

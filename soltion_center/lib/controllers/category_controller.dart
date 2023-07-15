@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:soltion_center/models/category_model.dart';
+import 'package:soltion_center/services/auth_service.dart';
 
 import '../services/category_service.dart';
 
@@ -9,16 +10,31 @@ class CategoryController with ChangeNotifier {
 
 
   final CategoryService _categoryService = CategoryService();
-  List<CategoryModel> categories = [];
+  final AuthService userServices = AuthService();
+
+ // List<CategoryModel> categories = [];
+  List<CategoryModel> _allCategories = [];
+
+  List<CategoryModel> _userCategory = [];
+
+  List<CategoryModel> _searchedCategories = [];
+
+
+  List<CategoryModel> get searchedCategories => _searchedCategories;
+
+  set searchedCategories(List<CategoryModel> value) {
+    _searchedCategories = value;
+    notifyListeners();
+  }
 
   var categoryNameController = TextEditingController();
-  var categoryDescriptionController = TextEditingController();
   CategoryModel? categoryModel;
 
   bool _isLogin = true;
   bool _isFilled = false;
 
   bool get getIsLogin => _isLogin;
+
   bool get getIsFilled => _isFilled;
 
   set setIsFilled(bool condition) {
@@ -33,8 +49,7 @@ class CategoryController with ChangeNotifier {
 // boş veri kontrolü sağlanır aksi takdirde kullanıcıya uyarı verilir.
   void isNotBlank() {
     if (!_isLogin) {
-      if (categoryNameController.text.isEmpty ||
-          categoryDescriptionController.text.isEmpty) {
+      if (categoryNameController.text.isEmpty) {
         _isFilled = false;
         //TODO send back that the fields is empty
         notifyListeners();
@@ -42,15 +57,42 @@ class CategoryController with ChangeNotifier {
         _isFilled = true;
         notifyListeners();
       }
-    }else {
+    } else {
       //TODO add the login error
     }
   }
 
 // get all category
   Future<List<CategoryModel>> getAllCategories() async {
-    categories = (await _categoryService.getCategories())!;
-    return categories;
+    if (_allCategories.isEmpty ){
+      _allCategories = (await _categoryService.getCategories())!;
+    print("service all Categories");
+    _allCategories.forEach((element) {
+      print(element.categoryName);
+    });
+    return _allCategories;
+    }else {
+      print("_allCategories");
+      _allCategories.forEach((element) {
+        print(element.categoryName);
+      });
+      return _allCategories;
+    }
+
+  }
+
+
+  deleteCategoryFromUser(CategoryModel category) async {
+    _userCategory = await getCategoryOfUser();
+
+    for (var cat in _userCategory) {
+      if (cat.categoryId!.compareTo(category.categoryId!) == 0) {
+        userServices.deleteCategoryToUser(category);
+        _userCategory.remove(category);
+        notifyListeners();
+      }
+    }
+
   }
 
   // get category by id
@@ -59,7 +101,7 @@ class CategoryController with ChangeNotifier {
       CategoryModel? category = await _categoryService.getCategory(categoryId);
       if (category != null) {
         // Kategori bulundu
-        print('Kategori adı: ${category.categoryName}');
+        print('category name: ${category.categoryName}');
         return category;
       }
     } catch (e) {
@@ -72,9 +114,11 @@ class CategoryController with ChangeNotifier {
   }
 
   // get category by id
-  Future<List<CategoryModel>?> getListOfCategoryById(List<String> categoriesID) async {
+  Future<List<CategoryModel>?> getListOfCategoryById(
+      List<String> categoriesID) async {
     try {
-      List<CategoryModel>? categories = await _categoryService.getCategoryList(categoriesID);
+      List<CategoryModel>? categories = await _categoryService.getCategoryList(
+          categoriesID);
       if (categories != null) {
         // Kategori bulundu
         categories.forEach((category) {
@@ -92,30 +136,29 @@ class CategoryController with ChangeNotifier {
   }
 
   // add category
- Future<void> addCategory(List<CategoryModel> categories) async {
- 
-    for (var category in categories) {
-      if (category.categoryName!.isEmpty) {
-        _isFilled = false;
-        notifyListeners();
-        return;
-      }
-
+  Future<void> addCategory(CategoryModel category) async {
+    print("addCategory");
+    List<CategoryModel>? list = await _categoryService.getCategories();
+    if (!list!.contains(category)) {
+      _categoryService.addCategory(category);
+      _allCategories.add(category);
+      _userCategory.add(category);
+    }
+    notifyListeners();
   }
 
-  try {
-    await _categoryService.addCategory(categories);
-  
-  } catch (e) {
-    print(e);
+  addCategoryToUser(CategoryModel category) async {
+    _userCategory = await getCategoryOfUser();
+    if (_userCategory.contains(category) == false) {
+      _userCategory.add(category);
+      userServices.addCategoryToUser(category);
+      notifyListeners();
+    }
   }
 
-  // Gerekli alanlar doluysa veya giriş yapılmamışsa, temizleme işlemleri yapılır.
-  categoryNameController.clear();
-  categoryDescriptionController.clear();
-  setIsFilled = false;
+Future<List<CategoryModel>> getCategoryOfUser() async {
+  return await userServices.getUserCategory();
 }
-
 
   // Kategori silme işlemi
   Future<void> deleteCategory(String categoryId) async {

@@ -76,8 +76,12 @@ abstract class Localization {
   late String? profileInfo;
   late String? history;
   late String? categories;
+  late String? yourCategories;
   late String? category;
-  
+  late String? addCategory;
+  late String? searchForCategory;
+  late String? searchForCategoryDes;
+
   //Homepage
   late String? homeTitle;
   late String? welcomeMessage;
@@ -86,4 +90,7 @@ abstract class Localization {
 
   late String? homePageTitle;
   late String? homePageSubTitle;
+
+  late String? loading;
+
 }

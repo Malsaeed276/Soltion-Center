@@ -21,10 +21,10 @@ class TRLocalization implements Localization{
   };
 
   @override
-  String? logOut = 'Oturumu kapat';
+  String? logOut = 'Çıkış Yap';
 
   @override
-  String? login = 'Giriş';
+  String? login = 'Giriş Yap';
 
   @override
   String? loginText = 'Hesabınız var mı?';
@@ -86,14 +86,14 @@ class TRLocalization implements Localization{
 
   @override
   String? noInternetWarningDialogText =
-      'Şu anda internet bağlantısı algılanmadı. Bu oyun, oyun verilerini sürekli güncellemek için internet bağlantısına ihtiyaç duyar. Devam etmek için lütfen tekrar bağlanın';
+      'Şu anda internet bağlantısı algılanmadı. Bu uygulama, verilerini sürekli güncellemek için internet bağlantısına ihtiyaç duyar. Devam etmek için lütfen tekrar bağlanın';
 
   @override
   String? light = 'aydınlık';
 
   @override
   String? largeWebViewError =
-      "Bu cihaz desteklenmiyor. Lütfen bu oyunu sadece mobil tarayıcıda oynayın.";
+      "Bu cihaz desteklenmiyor. Lütfen bu uygulama sadece mobil tarayıcıda görüntüleyin.";
 
   // App Messages
   @override
@@ -118,7 +118,7 @@ class TRLocalization implements Localization{
   // Logout Dialog
   @override
   String? logoutDialogDescriptionText =
-      'Oturumu kapatmak istediğinizden emin misiniz?';
+      'Çıkış yapmak istediğinizden emin misiniz?';
 
   @override
   String? logoutDialogCancelButtonText = 'İptal';
@@ -139,7 +139,7 @@ class TRLocalization implements Localization{
   String? enterYourPassword = 'Şifrenizi giriniz';
 
   @override
-  String? nameSurname = 'Ad Soyad';
+  String? nameSurname = 'Ad & Soyad';
 
   @override
   String? createNewAccount = 'Yeni bir hesap oluştur?';
@@ -154,14 +154,14 @@ class TRLocalization implements Localization{
   String? category = 'Kategori';
 
   @override
-  String? history = 'Sorunun Geçmişi';
+  String? history = 'Soru Geçmişi';
   
   // Homepage
   @override
   String? homeTitle = 'Anasayfa';
   
   @override
-  String? welcomeMessage = 'Hoş Geldiniz';
+  String? welcomeMessage = 'Hoşgeldiniz';
   
   @override
   String? writeIssue = 'Lütfen sorununuzu yazın.';
@@ -173,7 +173,20 @@ class TRLocalization implements Localization{
   String? homePageSubTitle = 'Lütfen sahip olduğunuz sorunu aramaktan çekinmeyin, bulamadıysanız yeni bir sorun oluşturabilirsiniz.';
 
   @override
-  String? homePageTitle = 'Lütfen bize proboeminizin ne olduğunu söyleyin';
+  String? homePageTitle = 'Lütfen bize probleminizin ne olduğunu söyleyin';
 
+  @override
+  String? searchForCategory = 'Kategori ara';
 
+  @override
+  String? searchForCategoryDes = 'Lütfen kategori eklemek için önce arama yapınız.';
+
+  @override
+  String? yourCategories = 'Kategorileriniz';
+
+  @override
+  String? loading = 'Yükleniyor.....';
+
+  @override
+  String? addCategory = 'Kategori ekle';
 }

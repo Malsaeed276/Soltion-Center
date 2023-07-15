@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/services/auth_service.dart';
-import 'package:soltion_center/view/category/category_page.dart';
+import 'package:soltion_center/view/category/category_search_page.dart';
 import 'package:soltion_center/view/homepage/home_page.dart';
 import 'package:soltion_center/view/login/sign_in.dart';
 import 'package:soltion_center/view/login/sign_up.dart';
@@ -9,7 +9,7 @@ import 'package:soltion_center/view/profile/profile.dart';
 
 import 'controllers/connection_controller.dart';
 import 'controllers/localization_controller.dart';
-import 'controllers/user_controller.dart';
+
 import 'view/over_screens/apply_for_each_page.dart';
 import 'units/theme.dart';
 import 'view/intro.dart';
@@ -58,8 +58,8 @@ class MyApp extends StatelessWidget {
         '/Home': (context) =>  const ApplyForEachPage(
           child: HomePage(),
         ),
-        '/Profile/Category': (context) =>  ApplyForEachPage(
-          child: CategoryPage(),
+        '/Profile/Category': (context) =>  const ApplyForEachPage(
+          child: CategoryScreen(),
         ),
       },
 
