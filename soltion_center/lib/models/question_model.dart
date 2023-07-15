@@ -1,27 +1,49 @@
-class QuestionModel{
+class QuestionModel {
+  String? sId;
+  String? createdAt;
+  String? updatedAt;
+  String? questionTitle;
+  String? questionDetails;
+  List<String>? questionCategory;
+  String? questionState;
+  List<String>? userList;
+  int? userCounter;
 
-  //id
-  //title
-  //subTitile
-  //List <Category>
-  //date
-  //status
+  QuestionModel({
+    this.sId,
+    this.createdAt,
+    this.updatedAt,
+    this.questionTitle,
+    this.questionDetails,
+    this.questionCategory,
+    this.questionState,
+    this.userList,
+    this.userCounter,
+  });
 
-  //List of user
-  //List <answers>
+  QuestionModel.fromJson(Map<String, dynamic> json) {
+    sId = json['_id'];
+    createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
+    questionTitle = json['question_title'];
+    questionDetails = json['question_details'];
+    questionCategory = json['questionCategory'].cast<String>();
+    questionState = json['question_state'];
+    userList = json['user_list'].cast<String>();
+    userCounter = json['userCounter'];
+  }
 
-}
-
-class AnswerModel {
-  //answer
-
-  //id
-  //title
-  //subTitle
-  //date
-  //user info
-  // vote
-    // vote > 20 -> status = Solved
-    // vote < -5 ->  delete answer
-
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['createdAt'] = createdAt ?? DateTime.now();
+    data['updatedAt'] = updatedAt ?? DateTime.now();
+    data['question_title'] = questionTitle;
+    data['question_details'] = questionDetails;
+    data['questionCategory'] = questionCategory ?? [];
+    data['question_state'] = questionState ?? 'not_solved';
+    data['user_list'] = userList ?? [];
+    data['userCounter'] = userCounter ?? 0;
+    return data;
+  }
 }
