@@ -92,5 +92,15 @@ abstract class Localization {
   late String? homePageSubTitle;
 
   late String? loading;
+  late String? error;
+  late String? noDataRecorded;
+
+  late String? question;
+  late String? questions;
+  late String? addNewQuestion;
+  late String? addCategoryToQuestion;
+  late String? addDetailsToQuestion;
+  late String? addSolutionToQuestion;
+  late String? questionHistory;
 
 }

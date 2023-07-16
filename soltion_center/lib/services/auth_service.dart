@@ -58,11 +58,20 @@ class AuthService {
     }
   }
 
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getCategoriesOfUser(){
+      var stream = db
+          .collection("users")
+          .doc(auth.currentUser!.uid)
+          .collection('category').snapshots();
+      return stream;
+  }
+
   // get user category
   Future<List<CategoryModel>> getUserCategory() async {
     List<CategoryModel> categoryList = [];
     try {
-      var data = await db
+       await db
           .collection("users")
           .doc(auth.currentUser!.uid)
           .collection('category')

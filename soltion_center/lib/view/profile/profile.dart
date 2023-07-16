@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/user_controller.dart';
 import 'package:soltion_center/models/profile_model.dart';
+import 'package:soltion_center/models/user_model.dart';
 import 'package:soltion_center/units/logo.dart';
 
 part 'profile_header.dart';

@@ -36,24 +36,26 @@ class ProfileModel {
         //   questionDetails: 'Test Details',
         // ));
 
-         List<QuestionModel> test =  await service.getAllQuestions();
+         //List<QuestionModel> test =  await service.getAllQuestions();
 
-         service.addQuestionAnswer(test.first,AnswerModel(
-           answerCounter: 0,
-           userId: 'IDaAHS8iC4MCnPMUhDrPO5KuRE83',
-           createdAt: '${DateTime.now()}',
-           questionId: test.first.sId,
-           updatedAt: '${DateTime.now()}',
-           answerDescription:'Answer test',
-           answerTitle:
-           'Answer test test',
-         ),);
+         // service.addQuestionAnswer(test.first,AnswerModel(
+         //   answerCounter: 0,
+         //   userId: 'IDaAHS8iC4MCnPMUhDrPO5KuRE83',
+         //   createdAt: '${DateTime.now()}',
+         //   questionId: test.first.sId,
+         //   updatedAt: '${DateTime.now()}',
+         //   answerDescription:'Answer test',
+         //   answerTitle:
+         //   'Answer test test',
+         // ),);
 
         //service.updateAnswerCounter(test.first.sId!,'kEEeWYand6ZJiGQDWAQT', -1);
-        
+
       }),
 
-      ProfileModel(name: lang.history!, icon: Icons.history_outlined, route: '/Profile/History'),
+      ProfileModel(name: lang.history!, icon: Icons.history_outlined, route: '/Profile/History',onPressed: (){
+        Navigator.pushNamed(context, '/Profile/History');
+      }),
       ProfileModel(name: lang.categories!, icon: Icons.list, route: '/Profile/Categories',onPressed: (){
         Navigator.pushNamed(context, '/Profile/Category');
       }),

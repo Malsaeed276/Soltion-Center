@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/controllers/user_controller.dart';
 
 import 'app.dart';
@@ -43,7 +44,8 @@ void main() async {
         ChangeNotifierProvider(create: (context) => ConnectionController()),
         ChangeNotifierProvider(create: (context) => UserController()),
         ChangeNotifierProvider(create: (context) => CategoryController()),
-        
+        ChangeNotifierProvider(create: (context) => QuestionController()),
+
       ],
       child: MyApp(),
     ),

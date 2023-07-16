@@ -189,4 +189,31 @@ class TRLocalization implements Localization{
 
   @override
   String? addCategory = 'Kategori ekle';
+
+  @override
+  String? error = 'Hata!';
+
+  @override
+  String? noDataRecorded = 'Veri kaydedilmedi';
+
+  @override
+  String? addCategoryToQuestion;
+
+  @override
+  String? addDetailsToQuestion;
+
+  @override
+  String? addNewQuestion;
+
+  @override
+  String? addSolutionToQuestion;
+
+  @override
+  String? question;
+
+  @override
+  String? questionHistory;
+
+  @override
+  String? questions;
 }

@@ -13,6 +13,7 @@ import 'controllers/localization_controller.dart';
 import 'view/over_screens/apply_for_each_page.dart';
 import 'units/theme.dart';
 import 'view/intro.dart';
+import 'view/question/question_history.dart';
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
@@ -60,6 +61,9 @@ class MyApp extends StatelessWidget {
         ),
         '/Profile/Category': (context) =>  const ApplyForEachPage(
           child: CategoryScreen(),
+        ),
+        '/Profile/History': (context) =>  const ApplyForEachPage(
+          child: QuestionHistoryPage(),
         ),
       },
 

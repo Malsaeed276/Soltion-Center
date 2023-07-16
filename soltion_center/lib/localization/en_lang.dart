@@ -189,4 +189,31 @@ class ENLocalization implements Localization {
 
   @override
   String? addCategory= ' Add Category';
+
+  @override
+  String? error = 'Error!';
+
+  @override
+  String? noDataRecorded = 'No Data recorded';
+
+  @override
+  String? addCategoryToQuestion = 'Add Category to the question';
+
+  @override
+  String? addDetailsToQuestion = 'Add details to the Question';
+
+  @override
+  String? addNewQuestion = 'Add new question';
+
+  @override
+  String? addSolutionToQuestion = 'Add a solution to the question';
+
+  @override
+  String? question = 'Question';
+
+  @override
+  String? questionHistory = 'Questions History';
+
+  @override
+  String? questions = 'Questions';
 }
