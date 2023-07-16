@@ -27,7 +27,9 @@ class QuestionDetailsButton extends StatelessWidget {
       },
       child: Text(
         'Details',
-        style: Theme.of(context).textTheme.button,
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
       ),
     );
   }

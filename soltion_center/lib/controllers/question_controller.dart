@@ -9,11 +9,13 @@ import '../models/question_model.dart';
 import '../models/user_model.dart';
 
 class QuestionController with ChangeNotifier {
+  final questionSearchTextField = TextEditingController();
   final QuestionServices questionService = QuestionServices();
+  final ScrollController scrollController = ScrollController();
+
   List<QuestionModel> _allQuestions = [];
-
+  List<QuestionModel> findQuestionList = [];
   List<CategoryModel> selectedCategory = [];
-
 
   final String currentUserID = AuthService().getCurrentUser()!.uid;
 

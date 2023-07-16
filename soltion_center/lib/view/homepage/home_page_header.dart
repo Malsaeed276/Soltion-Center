@@ -27,30 +27,36 @@ class HomePageHeader extends StatelessWidget {
           const SizedBox(height: 24),
           GestureDetector(
             onTap: (){
-              //TODO Add calling the search function
+              Navigator.pushNamed(context, '/Search');
             },
-            child: Container(
-              width: double.infinity,
-              height: 55,
-              decoration: BoxDecoration(
-                color: theme.colorScheme.background,
-                borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: theme.colorScheme.outline,
-                  width: 2.5,)
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(width: 18,),
-                  Icon(Icons.search, color: theme.colorScheme.outline),
-                  const SizedBox(width: 8),
-                  Text(
-                    lang.search!,
-                    style: theme.textTheme.titleSmall!.copyWith(
-                      color: theme.colorScheme.outline,
-                    ),
+            child: Hero(
+              tag: 'Search',
+              child: Material(
+                color: Colors.transparent,
+                child: Container(
+                  width: double.infinity,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.background,
+                    borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: theme.colorScheme.outline,
+                      width: 2.5,)
                   ),
-                ],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(width: 18,),
+                      Icon(Icons.search, color: theme.colorScheme.outline),
+                      const SizedBox(width: 8),
+                      Text(
+                        lang.search!,
+                        style: theme.textTheme.titleSmall!.copyWith(
+                          color: theme.colorScheme.outline,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),

@@ -14,6 +14,7 @@ import 'view/over_screens/apply_for_each_page.dart';
 import 'units/theme.dart';
 import 'view/intro.dart';
 import 'view/question/question_history.dart';
+import 'view/search_screen/search_screen.dart';
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
@@ -64,6 +65,9 @@ class MyApp extends StatelessWidget {
         ),
         '/Profile/History': (context) =>  const ApplyForEachPage(
           child: QuestionHistoryPage(),
+        ),
+        '/Search': (context) =>  ApplyForEachPage(
+          child: SearchScreen(),
         ),
       },
 
