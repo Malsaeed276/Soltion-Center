@@ -92,8 +92,27 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
   * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
   * Daha sık toplantı yapılmasına karar verilmiştir.
 
+  # Sprint 3
+- Sprint Notları: Bu Sprint için hedef olarak koyduğumuz anasayfa,profil sayfası, arama sayfası, kategori sayfaları ile service ve firebase görevleri  backlog ve done kısımlarında takım üyelerinin gerçekleştirdiği görevlerle birlikte yer alıyor.
+- Sprint içinde tamamlanması tahmin edilen puan: 120 Puan
+- Puan tamamlama mantığı: Proje boyunca tamamlanması gereken toplam 340 puanlık backlog bulunmaktadır. 2. ve 3. sprint için eşit derecede görev tanımlandığından ikisinin de 120 puan olmasına karar verildi.
+- Daily Scrum: 3. Sprint için Daily Scrum toplantıları Google Meet ve Whatsapp üzerinden yapılmıştır. Daily Scrum toplantısı örneği word olarak Readme'de tarafımızdan paylaşılmaktadır: [sprint3.docx](https://github.com/Malsaeed276/Soltion-Center/files/12065251/sprint3.docx)
 
 
+- Sprint board update: Sprint board screenshotları:
+- Ürün Durumu :
+
+![WhatsApp Image 2023-07-16 at 13 14 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/abee0691-a8e9-4868-8f44-3aafcc93d821)
+![WhatsApp Image 2023-07-17 at 01 27 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/1f9fcf06-1e97-4fb5-90c2-56aaaa411c29)
+![WhatsApp Image 2023-07-17 at 01 37 57](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/7c76261f-37be-47e6-9a1a-18a37e1fd5a5)
+
+- Sprint Review:
+  * Uygulamanın anasayfası ve arama sayfası tasarlanmıştır.
+  * Uygulamanın kategori sayfası ve profil sayfası tasarlanmıştır.
+  * Service ve firebase kısımları halledilmiştir.
+- Sprint Retrospective:
+  * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
+  * Daha sık toplantı yapılmasına karar verilmiştir.
 
 
 
