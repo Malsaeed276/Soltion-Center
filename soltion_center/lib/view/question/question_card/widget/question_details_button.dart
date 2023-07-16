@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/models/question_model.dart';
+import 'package:soltion_center/view/question/question_screen.dart';
 
 class QuestionDetailsButton extends StatelessWidget {
   const QuestionDetailsButton({Key? key, required this.question})
@@ -23,7 +24,13 @@ class QuestionDetailsButton extends StatelessWidget {
       ),
       onPressed: () {
         //TODO Add navigation
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                QuestionScreen(question: question),
+          ),
+        );
       },
       child: Text(
         'Details',

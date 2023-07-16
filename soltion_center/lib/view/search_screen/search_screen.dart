@@ -33,7 +33,9 @@ class SearchScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          IconButton(onPressed: (){},
+          IconButton(onPressed: (){
+            Navigator.pushNamed(context, '/addQuestion');
+          },
             icon: const Icon(Icons.add_comment_outlined),
             color: theme.colorScheme.secondary,)
         ],

@@ -13,6 +13,7 @@ import 'controllers/localization_controller.dart';
 import 'view/over_screens/apply_for_each_page.dart';
 import 'units/theme.dart';
 import 'view/intro.dart';
+import 'view/question/add_question.dart';
 import 'view/question/question_history.dart';
 import 'view/search_screen/search_screen.dart';
 
@@ -69,6 +70,10 @@ class MyApp extends StatelessWidget {
         '/Search': (context) =>  ApplyForEachPage(
           child: SearchScreen(),
         ),
+        '/addQuestion': (context) =>  const ApplyForEachPage(
+          child: AddQuestionScreen(),
+        ),
+
       },
 
     );

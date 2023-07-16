@@ -10,12 +10,20 @@ import '../models/user_model.dart';
 
 class QuestionController with ChangeNotifier {
   final questionSearchTextField = TextEditingController();
+
+  final answerTitleController = TextEditingController();
+  final answerDetailsController = TextEditingController();
+
+  final questionTitleController = TextEditingController();
+  final questionDetailsController = TextEditingController();
+
   final QuestionServices questionService = QuestionServices();
   final ScrollController scrollController = ScrollController();
 
   List<QuestionModel> _allQuestions = [];
   List<QuestionModel> findQuestionList = [];
   List<CategoryModel> selectedCategory = [];
+  List<CategoryModel> newQuestionSelectedCategory = [];
 
   final String currentUserID = AuthService().getCurrentUser()!.uid;
 
@@ -27,6 +35,17 @@ class QuestionController with ChangeNotifier {
     }
     return false;
   }
+
+  void updateNewQuestionSelectedCategory(CategoryModel category) {
+    if (newQuestionSelectedCategory.contains(category)) {
+      newQuestionSelectedCategory.remove(category);
+      notifyListeners();
+    } else {
+      newQuestionSelectedCategory.add(category);
+      notifyListeners();
+    }
+  }
+
 
   void updateSelectedCategoryList(CategoryModel category) {
     if (checkSelectedCategory(selectedCategory, category)) {
