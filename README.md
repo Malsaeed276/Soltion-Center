@@ -100,6 +100,9 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 
 
 - Sprint board update: Sprint board screenshotları:
+
+![sprint3](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/cd551266-870e-4fff-a496-68977aaa09d6)
+
 - Ürün Durumu :
 
 ![WhatsApp Image 2023-07-16 at 13 14 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/abee0691-a8e9-4868-8f44-3aafcc93d821)
