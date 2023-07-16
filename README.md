@@ -115,7 +115,7 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
   * Service ve firebase kısımları halledilmiştir.
 - Sprint Retrospective:
   * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
-  * Daha sık toplantı yapılmasına karar verilmiştir.
+  * Uygulamanın güncel durumuna ilişkin daha çok bilgi verilmesine karar verilmiştir.
 
 
 
