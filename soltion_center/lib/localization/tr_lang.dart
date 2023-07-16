@@ -197,23 +197,23 @@ class TRLocalization implements Localization{
   String? noDataRecorded = 'Veri kaydedilmedi';
 
   @override
-  String? addCategoryToQuestion;
+  String? addCategoryToQuestion = 'Soruya kategori ekle';
 
   @override
-  String? addDetailsToQuestion;
+  String? addDetailsToQuestion = 'Soruya detaylı bir açıklama ekle.';
 
   @override
-  String? addNewQuestion;
+  String? addNewQuestion = 'Yeni soru ekle';
 
   @override
-  String? addSolutionToQuestion;
+  String? addSolutionToQuestion = 'Soruya bir çözüm ekle';
 
   @override
-  String? question;
+  String? question = 'Soru';
 
   @override
-  String? questionHistory;
+  String? questionHistory = 'Soru Geçmişi';
 
   @override
-  String? questions;
+  String? questions = 'Sorular';
 }
