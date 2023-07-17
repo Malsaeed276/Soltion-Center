@@ -101,7 +101,8 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 
 - Sprint board update: Sprint board screenshotları:
 
-![sprint3](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/cd551266-870e-4fff-a496-68977aaa09d6)
+![sprint 3](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/ea358b99-af16-468b-9666-8f458dbc059f)
+
 
 - Ürün Durumu :
 
