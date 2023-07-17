@@ -109,6 +109,7 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 ![WhatsApp Image 2023-07-16 at 13 14 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/abee0691-a8e9-4868-8f44-3aafcc93d821)
 ![WhatsApp Image 2023-07-17 at 01 27 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/1f9fcf06-1e97-4fb5-90c2-56aaaa411c29)
 ![WhatsApp Image 2023-07-17 at 01 37 57](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/7c76261f-37be-47e6-9a1a-18a37e1fd5a5)
+![WhatsApp Image 2023-07-17 at 11 57 01 (1)](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/2a90a812-16d2-415b-a0b5-121d996f5934)
 
 - Sprint Review:
   * Uygulamanın anasayfası ve arama sayfası tasarlanmıştır.
