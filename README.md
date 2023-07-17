@@ -116,8 +116,7 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
   * Uygulamanın kategori sayfası ve profil sayfası tasarlanmıştır.
   * Service ve firebase kısımları halledilmiştir.
 - Sprint Retrospective:
-  * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
-  * Uygulamanın güncel durumuna ilişkin daha çok bilgi verilmesine karar verilmiştir.
-
+  * Ekip üyeleri gerekli çabalarını ellerinden geldiğince göstermiştir.
+  * Bu proje sonucunda takım çalışması ve uygulama geliştirme konusunda tecrübe kazanılmıştır.
 
 
