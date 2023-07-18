@@ -101,21 +101,22 @@ sapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örne
 
 - Sprint board update: Sprint board screenshotları:
 
-![sprint3](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/cd551266-870e-4fff-a496-68977aaa09d6)
+![sprint 3](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/ea358b99-af16-468b-9666-8f458dbc059f)
+
 
 - Ürün Durumu :
 
 ![WhatsApp Image 2023-07-16 at 13 14 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/abee0691-a8e9-4868-8f44-3aafcc93d821)
 ![WhatsApp Image 2023-07-17 at 01 27 21](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/1f9fcf06-1e97-4fb5-90c2-56aaaa411c29)
 ![WhatsApp Image 2023-07-17 at 01 37 57](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/7c76261f-37be-47e6-9a1a-18a37e1fd5a5)
+![WhatsApp Image 2023-07-17 at 11 57 01 (1)](https://github.com/Malsaeed276/Soltion-Center/assets/116842195/2a90a812-16d2-415b-a0b5-121d996f5934)
 
 - Sprint Review:
   * Uygulamanın anasayfası ve arama sayfası tasarlanmıştır.
   * Uygulamanın kategori sayfası ve profil sayfası tasarlanmıştır.
   * Service ve firebase kısımları halledilmiştir.
 - Sprint Retrospective:
-  * Görevlerin onlara tanımlanan zaman aralığında yapılmasına özen gösterilmesi gerektiğine vurgu yapılmıştır.
-  * Uygulamanın güncel durumuna ilişkin daha çok bilgi verilmesine karar verilmiştir.
-
+  * Ekip üyeleri gerekli çabalarını ellerinden geldiğince göstermiştir.
+  * Bu proje sonucunda takım çalışması ve uygulama geliştirme konusunda tecrübe kazanılmıştır.
 
 
