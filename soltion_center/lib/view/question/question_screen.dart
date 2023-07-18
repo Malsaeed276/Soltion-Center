@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/answer_model.dart';
 import 'package:soltion_center/models/question_model.dart';
@@ -20,6 +21,7 @@ class QuestionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final questionProvider = Provider.of<QuestionController>(context);
     final theme = Theme.of(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     return Scaffold(
       backgroundColor: theme.colorScheme.background,
       resizeToAvoidBottomInset: false,
@@ -31,13 +33,13 @@ class QuestionScreen extends StatelessWidget {
             if (snapshot.hasError) {
               return Center(
                 child: Text(
-                  'Something went wrong ${snapshot.error}',
+                  '${lang.error}: ${snapshot.error}',
                   style: theme.textTheme.bodyLarge,
                 ),
               );
             } else if (!snapshot.hasData) {
               return Text(
-                "Loading",
+                lang.loading!,
                 style: theme.textTheme.bodyLarge,
               );
             } else if (snapshot.data!.isEmpty) {
@@ -87,7 +89,7 @@ class QuestionScreen extends StatelessWidget {
                                         color: theme.colorScheme.onBackground,
                                       ),
                                       Text(
-                                        'Who has the same question',
+                                        lang.whoHasTheSameQuestion!,
                                         textAlign: TextAlign.center,
                                         style: theme.textTheme
                                             .headlineSmall,
@@ -132,7 +134,7 @@ class QuestionScreen extends StatelessWidget {
                                           } else {
                                             return Center(
                                               child: Text(
-                                                "There is no users",
+                                                lang.thereIsNoUser!,
                                                 style: theme.textTheme
                                                     .bodyLarge,
                                               ),
@@ -141,7 +143,7 @@ class QuestionScreen extends StatelessWidget {
                                         } else {
                                           return Center(
                                             child: Text(
-                                              "Loading...",
+                                              lang.loading!,
                                               style: theme.textTheme
                                                   .bodyLarge,
                                             ),
@@ -171,7 +173,7 @@ class QuestionScreen extends StatelessWidget {
                                           Navigator.pop(context);
                                         },
                                         child: Text(
-                                          'Add yourself',
+                                          lang.addYourself!,
                                           style: theme.textTheme
                                               .bodyMedium!
                                               .copyWith(
@@ -246,7 +248,7 @@ class QuestionScreen extends StatelessWidget {
                                 height: 24,
                               ),
                               Text(
-                                "there is no answers yet",
+                                lang.thereIsNoAnswerYet!,
                                 style: theme.textTheme.bodyLarge,
                               ),
                               const SizedBox(
@@ -275,7 +277,7 @@ class QuestionScreen extends StatelessWidget {
                                   );
                                 },
                                 child: Text(
-                                  'Add Answer',
+                                  lang.addAnswer!,
                                   style: theme.textTheme
                                       .bodyMedium!
                                       .copyWith(
@@ -339,7 +341,7 @@ class QuestionScreen extends StatelessWidget {
                                         color: theme.colorScheme.onBackground,
                                       ),
                                       Text(
-                                        'Who has the same question',
+                                        lang.whoHasTheSameQuestion!,
                                         textAlign: TextAlign.center,
                                         style: theme.textTheme
                                             .headlineSmall,
@@ -384,7 +386,7 @@ class QuestionScreen extends StatelessWidget {
                                           } else {
                                             return Center(
                                               child: Text(
-                                                "There is no users",
+                                                lang.thereIsNoUser!,
                                                 style: theme.textTheme
                                                     .bodyLarge,
                                               ),
@@ -393,7 +395,7 @@ class QuestionScreen extends StatelessWidget {
                                         } else {
                                           return Center(
                                             child: Text(
-                                              "Loading...",
+                                              lang.loading!,
                                               style: theme.textTheme
                                                   .bodyLarge,
                                             ),
@@ -427,7 +429,7 @@ class QuestionScreen extends StatelessWidget {
                                           Navigator.pop(context);
                                         },
                                         child: Text(
-                                          'Add yourself',
+                                          lang.addYourself!,
                                           style: theme.textTheme
                                               .bodyMedium!
                                               .copyWith(
@@ -624,7 +626,7 @@ class QuestionScreen extends StatelessWidget {
                                       );
                                     },
                                     child: Text(
-                                      'Add Answer',
+                                      lang.addAnswer!,
                                       style: theme.textTheme
                                           .bodyMedium!
                                           .copyWith(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/category_controller.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/category_model.dart';
 import 'package:soltion_center/models/question_model.dart';
@@ -23,13 +24,14 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
     final info = MediaQuery.of(context);
     final questionProvider = Provider.of<QuestionController>(context);
     final categoryProvider = Provider.of<CategoryController>(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.colorScheme.background,
       appBar: AppBar(
         backgroundColor: theme.colorScheme.surfaceVariant,
         title: Text(
-          'Add new question',
+          lang.addNewQuestion!,
           style: theme.textTheme.titleLarge,
         ),
         leading: IconButton(
@@ -50,7 +52,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Question information',
+                lang.questionInformation!,
                 style: theme.textTheme.titleMedium,
               ),
               const SizedBox(
@@ -64,14 +66,14 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                 autocorrect: false,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter text';
+                    return lang.pleaseEnterText;
                   } else {
                     return null;
                   }
                 },
                 decoration: textFormFieldDecoration(
-                  label: 'Title',
-                  hint: 'Enter your question title',
+                  label: lang.title,
+                  hint: lang.pleaseEnterYourQuestionTitle!,
                   context: context,
                 ),
               ),
@@ -88,14 +90,14 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                 autocorrect: false,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter text';
+                    return lang.pleaseEnterText;
                   } else {
                     return null;
                   }
                 },
                 decoration: textFormFieldDecoration(
-                  label: 'Details',
-                  hint: 'Enter your question details',
+                  label: lang.details,
+                  hint: lang.pleaseEnterYourQuestionDetails,
                   context: context,
                 ),
               ),
@@ -124,7 +126,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                         child: Column(
                           children: [
                             Text(
-                              'Select category',
+                              lang.selectCategory!,
                               textAlign: TextAlign.center,
                               style: theme.textTheme.headlineSmall,
                             ),
@@ -132,7 +134,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                               height: 8,
                             ),
                             Text(
-                              'Please select the categories that can be useful for the question',
+                              lang.selectCategoryDescription!,
                               textAlign: TextAlign.center,
                               style: theme.textTheme.titleSmall,
                             ),
@@ -212,7 +214,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                                           );
                                         },
                                         child:
-                                        const Text('Add a new Category')),
+                                         Text(lang.addCategory!)),
                                     SizedBox(
                                       width: MediaQuery.of(context).size.width,
                                       child: ElevatedButton(
@@ -232,7 +234,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                                           Navigator.pop(context);
                                         },
                                         child: Text(
-                                          'Cancel',
+                                          lang.cancel!,
                                           style: theme.textTheme
 
                                               .bodyMedium!
@@ -247,18 +249,15 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                               } else {
                                 return Center(
                                   child: Text(
-                                    'Loadding.....',
+                                    lang.error!,
                                     style:
                                     theme.textTheme.bodyLarge,
                                   ),
                                 );
                               }
                             } else {
-                              return Center(
-                                child: Text(
-                                  'Loadding.....',
-                                  style: theme.textTheme.bodyLarge,
-                                ),
+                              return const Center(
+                                child: LinearProgressIndicator(),
                               );
                             }
                           }),
@@ -269,7 +268,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                     ),
                   ),
                   child: Text(
-                    'Add Category',
+                    lang.addCategory!,
                     style: theme.textTheme.titleSmall!.copyWith(
                       color: theme.colorScheme.onSecondaryContainer,
                     ),
@@ -375,7 +374,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
                     }
                   },
                   child: Text(
-                    'Save',
+                    lang.save!,
                     style: theme.textTheme
 
                         .titleSmall!

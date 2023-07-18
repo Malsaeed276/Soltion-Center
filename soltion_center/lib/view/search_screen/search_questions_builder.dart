@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/category_controller.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/question_model.dart';
 import 'package:soltion_center/view/question/question_card/question_card.dart';
@@ -16,8 +17,8 @@ class SearchQuestionBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
     final questionController = Provider.of<QuestionController>(context);
-    final categoryController = Provider.of<CategoryController>(context);
-
+    //final categoryController = Provider.of<CategoryController>(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     if (questions!.isNotEmpty) {
       List<QuestionModel>? _list = [];
       if (questionController.selectedCategory.isNotEmpty) {
@@ -40,7 +41,7 @@ class SearchQuestionBuilder extends StatelessWidget {
       //return there is nothing founded
       return Center(
         child: Text(
-          'There is nothing founded',
+          lang.thereIsNothingFounded!,
           style: themeData
               .textTheme
               .titleLarge,

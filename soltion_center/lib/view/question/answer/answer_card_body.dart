@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/answer_model.dart';
 
@@ -13,6 +14,7 @@ class AnswerCardBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final questionProvider = Provider.of<QuestionController>(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -49,7 +51,7 @@ class AnswerCardBody extends StatelessWidget {
                   backgroundColor: theme.colorScheme.background,
                   title: Center(
                     child: Text(
-                      'Vote for the  answer',
+                      lang.voteForTheAnswer!,
                       style: theme.textTheme.headlineSmall,
                     ),
                   ),
@@ -57,7 +59,7 @@ class AnswerCardBody extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'If this answer is working please vote for working and if it is not wokring vote',
+                        lang.voteForTheAnswerDescription!,
                         style: theme.textTheme.titleMedium,
                       ),
                       const SizedBox(
@@ -83,7 +85,7 @@ class AnswerCardBody extends StatelessWidget {
                               Navigator.pop(context);
                             },
                             child: Text(
-                              'Working',
+                              lang.working!,
                               style: theme.textTheme
 
                                   .bodyMedium!
@@ -101,8 +103,8 @@ class AnswerCardBody extends StatelessWidget {
                                   answer.questionId!, answer.sId!, -1);
                               Navigator.pop(context);
                             },
-                            child: const Text(
-                              'Not working',
+                            child:  Text(
+                              lang.notWorking!,
                             ),
                           ),
                         ],
@@ -112,7 +114,7 @@ class AnswerCardBody extends StatelessWidget {
                 ),
               ),
               child: Text(
-                'Vote',
+                lang.vote!,
                 style: theme.textTheme.titleSmall,
               )),
         ),

@@ -216,4 +216,92 @@ class ENLocalization implements Localization {
 
   @override
   String? questions = 'Questions';
+
+  @override
+  String? addAnswer = 'Add Answer';
+
+  @override
+  String? addNewAnswer = 'Add New Answer';
+
+  @override
+  String? addYourself = 'Add yourself';
+
+  @override
+  String? answer = 'Answer';
+
+  @override
+  String? answerInformation = 'Answer Information';
+
+  @override
+  String? answers = 'Answers';
+
+  @override
+  String? cancel = 'Cancel';
+
+  @override
+  String? details = 'Details';
+
+  @override
+  String? notFind = 'Not Find';
+
+  @override
+  String? notWorking = 'Not working';
+
+  @override
+  String? pleaseEnterText = 'Please Enter Text';
+
+  @override
+  String? pleaseEnterYourAnswerDescription = 'Please Enter Your Answer Details';
+
+  @override
+  String? pleaseEnterYourAnswerTitle = 'Please Enter Your Answer Title';
+
+  @override
+  String? pleaseEnterYourQuestionDetails = ' Please Enter your Question Details';
+
+  @override
+  String? pleaseEnterYourQuestionTitle = 'Please Enter Your Question Title';
+
+  @override
+  String? pleaseFillTheFields = 'Please fill the fills';
+
+  @override
+  String? questionInformation = 'Question Information';
+
+  @override
+  String? save ='Save';
+
+  @override
+  String? selectCategory = 'Select Category';
+
+  @override
+  String? selectCategoryDescription ='Please select the categories that can be useful for the question';
+
+  @override
+  String? thereIsNoAnswerYet = 'There is no answer Yet';
+
+  @override
+  String? thereIsNoUser = 'There os no User';
+
+  @override
+  String? thereIsNothingFounded = 'There is Nothing Founded';
+
+  @override
+  String? title = 'Title';
+
+  @override
+  String? vote = 'Vote';
+
+  @override
+  String? voteForTheAnswer = 'Vote For The answer';
+
+  @override
+  String? voteForTheAnswerDescription = 'If this answer is working please vote for working and if it is not working vote';
+
+  @override
+  String? whoHasTheSameQuestion = 'Who has the same question';
+
+  @override
+  String? working = 'Working';
+  
 }

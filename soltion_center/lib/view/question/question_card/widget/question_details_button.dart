@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/models/question_model.dart';
 import 'package:soltion_center/view/question/question_screen.dart';
 
@@ -33,7 +34,8 @@ class QuestionDetailsButton extends StatelessWidget {
         );
       },
       child: Text(
-        'Details',
+        context
+            .read<LocalizationController>().getLanguage().details!,
         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
           color: Theme.of(context).colorScheme.onPrimary,
         ),

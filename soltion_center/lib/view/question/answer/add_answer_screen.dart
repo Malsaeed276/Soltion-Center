@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/answer_model.dart';
 import 'package:soltion_center/models/question_model.dart';
@@ -21,13 +22,14 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
     final theme = Theme.of(context);
     final info = MediaQuery.of(context);
     final questionProvider = Provider.of<QuestionController>(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.colorScheme.background,
       appBar: AppBar(
         backgroundColor: theme.colorScheme.surfaceVariant,
         title: Text(
-          'Add new answer',
+          lang.addNewAnswer!,
           style: theme.textTheme.titleLarge,
         ),
         centerTitle: true,
@@ -44,7 +46,7 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Answer information',
+                lang.answerInformation!,
                 style: theme.textTheme.titleMedium,
               ),
               const SizedBox(
@@ -58,14 +60,14 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
                 autocorrect: false,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter answer title';
+                    return lang.pleaseEnterYourAnswerTitle;
                   } else {
                     return null;
                   }
                 },
                 decoration: textFormFieldDecoration(
-                  label: 'Title',
-                  hint: 'Enter your Answer title',
+                  label: lang.title,
+                  hint: lang.pleaseEnterYourAnswerTitle,
                   context: context,
                 ),
               ),
@@ -82,14 +84,14 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
                 autocorrect: false,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter details';
+                    return lang.pleaseEnterYourAnswerDescription;
                   } else {
                     return null;
                   }
                 },
                 decoration: textFormFieldDecoration(
-                  label: 'Details',
-                  hint: 'Enter your answer details',
+                  label: lang.details,
+                  hint: lang.pleaseEnterYourAnswerDescription,
                   context: context,
                 ),
               ),
@@ -133,7 +135,7 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
                     } else {
                       final snackBar = SnackBar(
                         content: Text(
-                          'Please fill the fields',
+                          lang.pleaseFillTheFields!,
                           style:
                           theme.textTheme.bodyLarge!.copyWith(
                             color: theme.colorScheme.background,
@@ -147,7 +149,7 @@ class _AddAnswerScreenState extends State<AddAnswerScreen> {
                     }
                   },
                   child: Text(
-                    'Save',
+                    lang.save!,
                     style: theme.textTheme
 
                         .titleSmall!

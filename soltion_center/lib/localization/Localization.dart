@@ -81,6 +81,8 @@ abstract class Localization {
   late String? addCategory;
   late String? searchForCategory;
   late String? searchForCategoryDes;
+  late String? selectCategory;
+  late String? selectCategoryDescription; // 'Please select the categories that can be useful for the question'
 
   //Homepage
   late String? homeTitle;
@@ -102,5 +104,38 @@ abstract class Localization {
   late String? addDetailsToQuestion;
   late String? addSolutionToQuestion;
   late String? questionHistory;
+  late String? details;
+  late String? questionInformation;
+
+  late String? pleaseEnterYourQuestionTitle;
+  late String? pleaseEnterText;
+  late String? pleaseEnterYourQuestionDetails;
+  late String? title;
+  late String? cancel;
+  late String? save;
+
+  late String? voteForTheAnswer; //'Vote for the  answer'
+  late String? voteForTheAnswerDescription; //'If this answer is working please vote for working and if it is not wokring vote'
+  late String? working;
+  late String? notWorking;
+  late String? vote;
+
+  late String? addNewAnswer;
+  late String? answer;
+  late String? answers;
+  late String? answerInformation;
+  late String? pleaseEnterYourAnswerTitle;
+  late String? addAnswer;
+  late String? pleaseEnterYourAnswerDescription;
+  late String? thereIsNoAnswerYet; //"there is no answers yet"
+
+  late String? pleaseFillTheFields; //'Please fill the fields'
+  late String? whoHasTheSameQuestion; //'Who has the same question'
+  late String? thereIsNoUser; //"There is no users"
+  late String? addYourself; //'Add yourself'
+  late String? notFind;
+  late String? thereIsNothingFounded;//There is nothing founded'
+
+
 
 }

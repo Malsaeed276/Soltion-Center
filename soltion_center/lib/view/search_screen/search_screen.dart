@@ -55,7 +55,7 @@ class SearchScreen extends StatelessWidget {
               style: theme.textTheme.bodyLarge,
               //autofocus: true,
               decoration: InputDecoration(
-                hintText: 'search',
+                hintText: lang.search,
                 hintStyle: theme.textTheme.bodyLarge,
                 fillColor: theme.colorScheme.onBackground!,
                 enabled: true,
@@ -127,7 +127,7 @@ class SearchScreen extends StatelessWidget {
                         } else {
                           return Center(
                             child: Text(
-                              "Not find",
+                              lang.notFind!,
                               style: theme.textTheme.bodyLarge,
                             ),
                           );
@@ -135,7 +135,7 @@ class SearchScreen extends StatelessWidget {
                       } else {
                         return Center(
                           child: Text(
-                            "loading..",
+                            lang.loading!,
                             style: theme.textTheme.bodyLarge,
                           ),
                         );

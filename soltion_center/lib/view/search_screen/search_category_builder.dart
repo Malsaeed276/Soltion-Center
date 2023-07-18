@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:soltion_center/controllers/category_controller.dart';
+import 'package:soltion_center/controllers/localization_controller.dart';
 import 'package:soltion_center/controllers/question_controller.dart';
 import 'package:soltion_center/models/category_model.dart';
 
@@ -18,12 +19,13 @@ class _SearchCategoryBuilderState extends State<SearchCategoryBuilder> {
     final themeData = Theme.of(context);
     final questionController = Provider.of<QuestionController>(context);
     final categoryController = Provider.of<CategoryController>(context);
+    final lang = Provider.of<LocalizationController>(context).getLanguage();
     return Column(
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Your Categories',
+          lang.yourCategories!,
           style: themeData.textTheme.titleMedium,
         ),
         const SizedBox(
@@ -102,7 +104,7 @@ class _SearchCategoryBuilderState extends State<SearchCategoryBuilder> {
                 } else {
                   return Center(
                     child: Text(
-                      'Loadding.....',
+                      lang.loading!,
                       style: themeData.textTheme.bodyLarge,
                     ),
                   );
@@ -110,7 +112,7 @@ class _SearchCategoryBuilderState extends State<SearchCategoryBuilder> {
               } else {
                 return Center(
                   child: Text(
-                    'Error',
+                    lang.error!,
                     style: themeData.textTheme.bodyLarge,
                   ),
                 );
