@@ -216,4 +216,89 @@ class TRLocalization implements Localization{
 
   @override
   String? questions = 'Sorular';
+
+  @override
+  String? addAnswer = "cevap ekle";
+
+  @override
+  String? addNewAnswer = "yeni cevap ekle";
+
+  @override
+  String? addYourself = "kendin ekle";
+  
+  @override
+  String? answer = "cevap";
+
+  @override
+  String? answerInformation = "cevap bilgisi";
+
+  @override
+  String? answers = "cevaplar";
+
+  @override
+  String? cancel= "son";
+
+  @override
+  String? details = "detaylar";
+
+  @override
+  String? notFind = "bulunamadı";
+
+  @override
+  String? notWorking = "çalışmıyor";
+
+  @override
+  String? pleaseEnterText = "Lütfen metin giriniz";
+
+  @override
+  String? pleaseEnterYourAnswerDescription = "Lütfen cevabınızın detaylarını ekleyiniz";
+
+  @override
+  String? pleaseEnterYourAnswerTitle = "Lütfen cevap başlığınızı giriniz";
+
+  @override
+  String? pleaseEnterYourQuestionDetails = "Lütfen soru detaylarını giriniz";
+
+  @override
+  String? pleaseEnterYourQuestionTitle = "Lütfen soru başlığınızı giriniz";
+
+  @override
+  String? pleaseFillTheFields = "Lütfen alanları doldurunuz";
+
+  @override
+  String? questionInformation = "soru bilgileri";
+
+  @override
+  String? save = "kaydet";
+
+  @override
+  String? selectCategory = "kategori seç";
+
+  @override
+  String? selectCategoryDescription = "Lütfen sorunuzun ilgili olduğu kategoriyi seçiniz";
+
+  @override
+  String? thereIsNoAnswerYet = "Henüz bir cevap yok";
+
+  @override
+  String? thereIsNoUser = "kullanıcı yok";
+
+  @override
+  String? thereIsNothingFounded = "bulunamadı";
+
+  @override
+  String? title = "başlık";
+
+  @override
+  String? vote = "oy";
+
+  @override
+  String? voteForTheAnswer = "oy ver";
+
+  @override
+  String? voteForTheAnswerDescription = "Eğer cevabın faydalı olduğunu düşünüyorsanız lütfen oy veriniz.";
+
+  @override
+  String? working = "faydalı";
+
 }

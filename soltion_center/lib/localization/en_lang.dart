@@ -263,7 +263,7 @@ class ENLocalization implements Localization {
   String? pleaseEnterYourQuestionTitle = 'Please Enter Your Question Title';
 
   @override
-  String? pleaseFillTheFields = 'Please fill the fills';
+  String? pleaseFillTheFields = 'Please fill the fields';
 
   @override
   String? questionInformation = 'Question Information';
@@ -281,7 +281,7 @@ class ENLocalization implements Localization {
   String? thereIsNoAnswerYet = 'There is no answer Yet';
 
   @override
-  String? thereIsNoUser = 'There os no User';
+  String? thereIsNoUser = 'There is no User';
 
   @override
   String? thereIsNothingFounded = 'There is Nothing Founded';
@@ -296,7 +296,7 @@ class ENLocalization implements Localization {
   String? voteForTheAnswer = 'Vote For The answer';
 
   @override
-  String? voteForTheAnswerDescription = 'If this answer is working please vote for working and if it is not working vote';
+  String? voteForTheAnswerDescription = 'If this answer is working please vote for working';
 
   @override
   String? whoHasTheSameQuestion = 'Who has the same question';
